@@ -1,0 +1,31 @@
+{
+  "name": "js-learnings",
+  "version": "1.0.0",
+  "description": "To facilitate my learning of JavaScript",
+  "main": "function-picture.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maximilian118/JS-Learnings.git"
+  },
+  "keywords": [
+    "Education",
+    "JavaScript",
+    "Eslint"
+  ],
+  "author": "Maximilian Crosby",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Maximilian118/JS-Learnings/issues"
+  },
+  "homepage": "https://github.com/Maximilian118/JS-Learnings#readme",
+  "dependencies": {
+    "p5": "^0.7.3"
+  },
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-config-p5js": "^1.0.1"
+  }
+}

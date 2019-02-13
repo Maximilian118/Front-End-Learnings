@@ -52,7 +52,7 @@ function grass() {
   for (var swoosh = 0; swoosh <= width; swoosh += 2) {
     line(swoosh, 800, swoosh + random(10), 770 + random(15));
   }
-  for (var swoosh = 0; swoosh <= width; swoosh += 2) {
+  for (swoosh; swoosh <= width; swoosh += 2) {
     line(swoosh, 800, swoosh + random(-10), 770 + random(15));
   }
 }
