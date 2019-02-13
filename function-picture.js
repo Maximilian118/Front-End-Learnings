@@ -10,13 +10,14 @@ function draw() {
   hills(0, 800, 900, 600, 120, 210, 120);
   hills(800, 800, 900, 800, 130, 200, 130);
   hay(246, 668, 50);
+  hay(576, 628, 75);
   grass();
 }
 
 function stars() {
   for (let i = 0; i < 200; i++) {
-    let x = getRandomInt(0, width);
-    let y = getRandomInt(0, height);
+    const x = getRandomInt(0, width);
+    const y = getRandomInt(0, height);
 
     stroke(255);
     line(x, y, x + 10, y + 10);
@@ -52,9 +53,9 @@ function hills(x, y, diameterX, diameterY, r, g, b) {
 function hay(x, y, dia) {
   fill(235, 235, 100);
   ellipse(x, y, dia);
-  ellipse(x + 4, y - 2, dia);
-  line(275, 665, 225, 670);
-  line(250, 640, 250, 690);
+  ellipse(x + 4, y + 2, dia);
+  line(x + 28, y + 2, x - 21, y + 2);
+  line(x + 4, y - 23, x + 4, y + 26);
 }
 
 function grass() {
