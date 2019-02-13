@@ -1,6 +1,6 @@
 function setup() {
   createCanvas(800, 800);
-  noLoop()
+  noLoop();
 }
 
 function draw() {
@@ -9,19 +9,20 @@ function draw() {
   moon();
   hills(0, 800, 900, 600, 120, 210, 120);
   hills(800, 800, 900, 800, 130, 200, 130);
+  hay(246, 668, 50);
   grass();
 }
 
 function stars() {
   for (let i = 0; i < 200; i++) {
-    let x = getRandomInt(0, width)
-    let y = getRandomInt(0, height)
-    
+    let x = getRandomInt(0, width);
+    let y = getRandomInt(0, height);
+
     stroke(255);
-      line(x, y, x+10, y+10);
-      line(x, y+10, x+10, y);
-      line(x-2, y+5, x+12, y+5);
-      line(x+5, y-2, x+5, y+12);
+    line(x, y, x + 10, y + 10);
+    line(x, y + 10, x + 10, y);
+    line(x - 2, y + 5, x + 12, y + 5);
+    line(x + 5, y - 2, x + 5, y + 12);
   }
 }
 
@@ -46,6 +47,14 @@ function hills(x, y, diameterX, diameterY, r, g, b) {
   stroke(0);
   fill(r, g, b);
   ellipse(x, y, diameterX, diameterY);
+}
+
+function hay(x, y, dia) {
+  fill(235, 235, 100);
+  ellipse(x, y, dia);
+  ellipse(x + 4, y - 2, dia);
+  line(275, 665, 225, 670);
+  line(250, 640, 250, 690);
 }
 
 function grass() {
