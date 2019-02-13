@@ -1,5 +1,6 @@
 function setup() {
   createCanvas(800, 800);
+  noLoop()
 }
 
 function draw() {
@@ -12,14 +13,15 @@ function draw() {
 }
 
 function stars() {
-  for (var x = 0; x <= width; x += 30) {
-    for (var y = 0; y <= height; y += 30) {
-      stroke(255);
+  for (let i = 0; i < 200; i++) {
+    let x = getRandomInt(0, width)
+    let y = getRandomInt(0, height)
+    
+    stroke(255);
       line(x, y, x+10, y+10);
       line(x, y+10, x+10, y);
       line(x-2, y+5, x+12, y+5);
       line(x+5, y-2, x+5, y+12);
-    }
   }
 }
 
@@ -55,4 +57,8 @@ function grass() {
   for (swoosh; swoosh <= width; swoosh += 2) {
     line(swoosh, 800, swoosh + random(-10), 770 + random(15));
   }
+}
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
