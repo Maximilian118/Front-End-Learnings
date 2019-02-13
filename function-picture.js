@@ -51,13 +51,11 @@ function hills(x, y, diameterX, diameterY, r, g, b) {
 }
 
 function hay(x, y, dia) {
-  let frontX = x + dia / 12;
-  let frontY = y + dia / 24;
   fill(235, 235, 100);
-  ellipse(x, y, dia); // back circle
-  ellipse(frontX, frontY, dia); // front circle
-  line(frontX - dia / 2, frontY, frontX + dia / 2, frontY);
-  line(frontX, frontY - dia / 2, frontX, frontY + dia / 2);
+  ellipse(x - (dia / 12), y - (dia / 24), dia);
+  ellipse(x, y, dia);
+  line(x - dia / 2, y, x + dia / 2, y);
+  line(x, y - dia / 2, x, y + dia / 2);
 }
 
 function grass() {
