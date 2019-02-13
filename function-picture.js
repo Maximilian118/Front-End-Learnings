@@ -1,6 +1,6 @@
 function setup() {
   createCanvas(800, 800);
-  noLoop();
+  frameRate(30);
 }
 
 function draw() {
@@ -11,6 +11,7 @@ function draw() {
   hills(800, 800, 900, 800, 130, 200, 130);
   hay(246, 668, 50);
   hay(576, 628, 75);
+  hay(140, 578, 25);
   grass();
 }
 
@@ -52,7 +53,7 @@ function hills(x, y, diameterX, diameterY, r, g, b) {
 
 function hay(x, y, dia) {
   fill(235, 235, 100);
-  ellipse(x - (dia / 12), y - (dia / 24), dia);
+  ellipse(x - dia / 12, y - dia / 24, dia);
   ellipse(x, y, dia);
   line(x - dia / 2, y, x + dia / 2, y);
   line(x, y - dia / 2, x, y + dia / 2);
