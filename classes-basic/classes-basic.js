@@ -5,7 +5,8 @@ function setup() {
   createCanvas(800, 800);
   square = new Square(300, 300, 200, 200);
   squar2 = new Square(100, 100, 600, 100);
-  println(square.x, square.y);
+  print(square.x, square.y);
+  console.log("hello world");
 }
 
 function draw() {
