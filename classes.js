@@ -46,8 +46,10 @@ function draw () {
   bubble.show();
   bubble1.move();
   bubble1.show();
+  bubble1.grow();
   bubble2.move();
   bubble2.show();
+  bubble2.grow();
   bubble3.move();
   bubble3.show();
   bubble4.move();
@@ -71,13 +73,14 @@ function draw () {
 }
 
 class Bubble {           // bubble template
-  constructor(x, y, d, r, g, b) {        // bubble paramiters
+  constructor(x, y, d, r, g, b, i) {        // bubble paramiters
   this.x = x;
   this.y = y;
   this.d = d;
   this.r = r;
   this.g = g;
   this.b = b;
+  this.i = i;
   }
   move() {              // bubble functionality
   this.x = this.x + random(-5, 5);
@@ -90,7 +93,7 @@ class Bubble {           // bubble template
     ellipse(this.x, this.y, this.d)
   }
   grow() {
-    this.r = this.r +2;
+    this.i = this.i + 200;
   }
 }
 
