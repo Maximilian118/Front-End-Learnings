@@ -3,3 +3,7 @@ function multiplier(factor) {
     return x * factor;
   }
 }
+
+function add(factor) {
+  x => x + factor;
+}
