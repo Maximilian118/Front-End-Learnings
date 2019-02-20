@@ -1,9 +1,18 @@
-const para = {  // an object 
+const para = (whatevs) => { 
+  console.log(whatevs);
+  whatevs.x = "a";
+  whatevs.y = "b"; 
+  whatevs.z = 69
+  console.log(whatevs);
+};
+
+para({  // an object 
   x : 5,
   y : 3,
   z : 9
-}
-let { x:a, y:b, z:c} = para;  // object arg vals into a, b and c
+});
+
+
 
 //-------------------------------------------------------------//
 funcName({
