@@ -20,3 +20,4 @@ Person.prototype.talk = function() {
 
 var crockford = new Person("Semicolons!!");
 crockford.talk();
+
