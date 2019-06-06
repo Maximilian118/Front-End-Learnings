@@ -1,2 +1,2 @@
-# JS-Learnings
-To facilitate my learning of JavaScript
+# Front-End-Learnings
+To facilitate my learning of Front-End languages and practices
