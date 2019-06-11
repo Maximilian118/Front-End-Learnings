@@ -4,5 +4,5 @@ Need to learn / Goals:
 
 - [X] A comprehensive understanding of JS.
 - [X] SCSS.
-- [ ] Bootstrap.
+- [X] Bootstrap.
 - [ ] React.
