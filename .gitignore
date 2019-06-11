@@ -1,2 +1,24 @@
 node_modules
 .DS_Store
+
+# dependencies
+react/react-app/node_modules
+react/react-app/.pnp
+react/react-app/.pnp.js
+
+# testing
+react/react-app/coverage
+
+# production
+react/react-app/build
+
+# misc
+react/react-app/.DS_Store
+react/react-app/.env.local
+react/react-app/.env.development.local
+react/react-app/.env.test.local
+react/react-app/.env.production.local
+
+react/react-app/npm-debug.log*
+react/react-app/yarn-debug.log*
+react/react-app/yarn-error.log*
