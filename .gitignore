@@ -1,24 +1,55 @@
+# general
 node_modules
 .DS_Store
 
+########################################## main-app
 # dependencies
-react/react-app/node_modules
-react/react-app/.pnp
-react/react-app/.pnp.js
+react/main-app/node_modules
+react/main-app/.pnp
+react/main-app/.pnp.js
+react/main-app/node_modules
+react/main-app/.pnp
+react/main-app/.pnp.js
 
 # testing
-react/react-app/coverage
+react/main-app/coverage
 
 # production
-react/react-app/build
+react/main-app/build
 
 # misc
-react/react-app/.DS_Store
-react/react-app/.env.local
-react/react-app/.env.development.local
-react/react-app/.env.test.local
-react/react-app/.env.production.local
+react/main-app/.DS_Store
+react/main-app/.env.local
+react/main-app/.env.development.local
+react/main-app/.env.test.local
+react/main-app/.env.production.local
 
-react/react-app/npm-debug.log*
-react/react-app/yarn-debug.log*
-react/react-app/yarn-error.log*
+react/main-app/npm-debug.log*
+react/main-app/yarn-debug.log*
+react/main-app/yarn-error.log*
+
+########################################## practice-app
+# dependencies
+react/practice-app/node_modules
+react/practice-app/.pnp
+react/practice-app/.pnp.js
+react/practice-app/node_modules
+react/practice-app/.pnp
+react/practice-app/.pnp.js
+
+# testing
+react/practice-app/coverage
+
+# production
+react/practice-app/build
+
+# misc
+react/practice-app/.DS_Store
+react/practice-app/.env.local
+react/practice-app/.env.development.local
+react/practice-app/.env.test.local
+react/practice-app/.env.production.local
+
+react/practice-app/npm-debug.log*
+react/practice-app/yarn-debug.log*
+react/practice-app/yarn-error.log*
