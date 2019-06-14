@@ -12,7 +12,9 @@ class App extends Component {
       {name: 'Max', pokemon: 'Pikachu'},
       {name: 'Luke', pokemon: 'Snorlax'},
       {name: 'Anna', pokemon: 'Jugglypuff'}
-    ]
+    ],
+    showPokemon: false,
+    showPeople: false
   }
 
   massPokemonChangeHandler = (pokemon1, pokemon2, pokemon3) => {
@@ -23,31 +25,47 @@ class App extends Component {
     ]})
   }
 
-  trainerChangeHandler = event => {
-    this.setState({trainers: [
-      {name: event.target.value, pokemon: 'Pikachu'},
-      {name: 'Luke', pokemon: 'Snorlax'},
-      {name: 'Anna', pokemon: 'Jugglypuff'}
-    ]})
+  showPokemonHandler = () => {
+    const doesShow = this.state.showPokemon;
+    this.setState({showPokemon: !doesShow})
+  }
+
+  showPeopleHandler = () => {
+    const doesShow = this.state.showPeople;
+    this.setState({showPeople: !doesShow})
   }
 
   render() {
+    let pokemon = null;
+    if (this.state.showPokemon) {
+      pokemon = (
+      <div>
+        <Pokemon pokemon={this.state.trainers[0].pokemon}/>
+        <Pokemon pokemon={this.state.trainers[1].pokemon}/>
+        <Pokemon pokemon={this.state.trainers[2].pokemon}/>
+      </div>
+      );
+    }
+
+    let people = null;
+    if (this.state.showPeople) {
+      people = (
+      <div>
+        <People name={this.state.trainers[0].name}/>
+        <People name={this.state.trainers[1].name}/>
+        <People name={this.state.trainers[2].name}/>
+      </div>
+      );
+    }
+
     return (
       <div className="App">
         <h1>Trainers and their Pokemon!</h1>
+        <button onClick={this.showPeopleHandler}>Show People!</button>
         <button onClick={this.massPokemonChangeHandler.bind(this, 'Eevee', 'Charmander', 'Mew')}>Change All Pokemon!</button>
-        <People 
-          changed={this.trainerChangeHandler} 
-          currentName={this.state.trainers[0].name}/>
-        <Pokemon 
-          name={this.state.trainers[0].name} 
-          pokemon={this.state.trainers[0].pokemon}/>
-        <Pokemon 
-          name={this.state.trainers[1].name} 
-          pokemon={this.state.trainers[1].pokemon}/>
-        <Pokemon 
-          name={this.state.trainers[2].name} 
-          pokemon={this.state.trainers[2].pokemon}/>
+        <button onClick={this.showPokemonHandler}>Show Pokemon!</button>
+        {people}
+        {pokemon}
       </div>
     )
   }

@@ -4,8 +4,8 @@ import './scss/People.css';
 // UserInput
 const people = props => {
   return (
-    <div>
-      <input type="text" onChange={props.changed} value={props.currentName}/>
+    <div className="people">
+      <p>I'm {props.name}</p>
     </div>
   )
 }

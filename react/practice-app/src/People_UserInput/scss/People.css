@@ -1,4 +1,9 @@
-input {
-  margin-top: 20px;
+.people {
+  width: 25%;
+  margin: 20px auto;
+  border: 2px solid #bdc3c7;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 4px 6px #bdc3c7;
+          box-shadow: 0 4px 6px #bdc3c7;
 }
 /*# sourceMappingURL=People.css.map */
