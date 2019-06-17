@@ -25,7 +25,8 @@ const person = props => {
 
   return (
     <div className="person">
-      <p>I am {isGay(props.name)} and I am {props.age} {multiple(props.children)}</p>
+      <input type="text" onChange={props.change} value={isGay(props.name)}/>
+      <p onClick={props.delete}>I am {isGay(props.name)} and I am {props.age} {multiple(props.children)}</p>
     </div>
   );
 }

@@ -53,3 +53,29 @@ react/practice-app/.env.production.local
 react/practice-app/npm-debug.log*
 react/practice-app/yarn-debug.log*
 react/practice-app/yarn-error.log*
+
+########################################## practice-app-2
+# dependencies
+react/practice-app-2/node_modules
+react/practice-app-2/.pnp
+react/practice-app-2/.pnp.js
+react/practice-app-2/node_modules
+react/practice-app-2/.pnp
+react/practice-app-2/.pnp.js
+
+# testing
+react/practice-app-2/coverage
+
+# production
+react/practice-app-2/build
+
+# misc
+react/practice-app-2/.DS_Store
+react/practice-app-2/.env.local
+react/practice-app-2/.env.development.local
+react/practice-app-2/.env.test.local
+react/practice-app-2/.env.production.local
+
+react/practice-app-2/npm-debug.log*
+react/practice-app-2/yarn-debug.log*
+react/practice-app-2/yarn-error.log*
