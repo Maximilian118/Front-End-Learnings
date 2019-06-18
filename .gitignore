@@ -28,6 +28,32 @@ react/main-app/npm-debug.log*
 react/main-app/yarn-debug.log*
 react/main-app/yarn-error.log*
 
+########################################## main-app-ejected
+# dependencies
+react/main-app-ejected/node_modules
+react/main-app-ejected/.pnp
+react/main-app-ejected/.pnp.js
+react/main-app-ejected/node_modules
+react/main-app-ejected/.pnp
+react/main-app-ejected/.pnp.js
+
+# testing
+react/main-app-ejected/coverage
+
+# production
+react/main-app-ejected/build
+
+# misc
+react/main-app-ejected/.DS_Store
+react/main-app-ejected/.env.local
+react/main-app-ejected/.env.development.local
+react/main-app-ejected/.env.test.local
+react/main-app-ejected/.env.production.local
+
+react/main-app-ejected/npm-debug.log*
+react/main-app-ejected/yarn-debug.log*
+react/main-app-ejected/yarn-error.log*
+
 ########################################## practice-app
 # dependencies
 react/practice-app/node_modules
