@@ -60,7 +60,8 @@ class App extends Component {
     // still within the function object.
     return (
       <div className="App">
-        <Cockpit 
+        <Cockpit
+          title={this.props.title}
           buttonColour={this.state.showPeople} 
           togglePeople={this.togglePeopleHandler}/>
         {display}

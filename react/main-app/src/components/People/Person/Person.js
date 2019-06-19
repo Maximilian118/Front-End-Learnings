@@ -2,7 +2,7 @@ import React from 'react';
 import './scss/Person.css'
 
 // This is a stateless component. Notice no 'useState' or 'setState'.
-const person = props => {
+const Person = props => {
   const multiple = hobbies => {
     if (hobbies) {
       let arr = [];
@@ -31,4 +31,4 @@ const person = props => {
   );
 }
 
-export default person;
+export default Person;

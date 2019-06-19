@@ -2,15 +2,13 @@ A collection of files used to facilitate my learning of Front-End languages and 
 
 Need to learn / Goals:
 
-- [X] A comprehensive understanding of JS.
+- [ ] React.
 - [X] SCSS.
 - [X] Bootstrap.
-- [ ] React.
+- [X] A comprehensive understanding of JS.
 
 React Learning Points:
 
-- [X] Primitive and Reference data types.
-- [X] Complete SC6 and SC7 syntactic understanding.
 - [X] Create-React-App.
 - [X] Common packages used with React. IE. Babel, WebPack.
 - [X] A comprehensive understanding of JSX.
@@ -22,3 +20,33 @@ React Learning Points:
 - [X] Syntactic and Logic errors.
 - [X] Using Dev Tools with React.
 - [X] Implementing and using errorBoundaries.
+- [X] File Structure & Naming trends.
+
+Bootstrap Learning Points:
+
+- [X] CDN vs NPM install.
+- [X] Syntactic knowledge base.
+- [X] Methods.
+- [X] Events.
+
+SCSS Learning Points:
+
+- [X] Nesting.
+- [X] Variables.
+- [X] Operators.
+- [X] Mixins.
+- [X] Flex and Grid.
+
+Vanilla JS Learning Points:
+
+- [X] Primitive and Reference data types.
+- [X] Complete ES5, ES6 and ES7 syntactic understanding.
+- [X] Understand and use forEach, for of, for in and map loops.
+- [X] Using Prototypes.
+- [X] The difference between object oriented and functional programming.
+- [X] Destructing.
+- [X] Exporting and importing/requiring files.
+- [X] Classes and Class inheritance.
+- [X] Manipulating the DOM.
+- [X] Event oriented programming.
+- [X] Higher order functions.
