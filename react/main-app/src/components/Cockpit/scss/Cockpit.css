@@ -1,15 +1,9 @@
-.App {
-  text-align: center;
-}
-
-h1 {
-  color: #19b5fe;
-}
-
 button {
   background: #d91e18;
+  border: none;
   width: 120px;
   height: 30px;
+  margin-bottom: 25px;
   cursor: pointer;
 }
 
@@ -19,7 +13,7 @@ button h3 {
           transform: translate(0, -8px);
 }
 
-.butColour {
+.buttonColour {
   background: #26c281;
 }
-/*# sourceMappingURL=app.css.map */
+/*# sourceMappingURL=Cockpit.css.map */

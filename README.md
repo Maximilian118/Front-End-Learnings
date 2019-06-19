@@ -19,5 +19,6 @@ React Learning Points:
 - [X] Conditional rendering.
 - [X] Outputting lists / DNR.
 - [X] CSS Modules and Dynamic styles.
+- [X] Syntactic and Logic errors.
 - [X] Using Dev Tools with React.
 - [X] Implementing and using errorBoundaries.

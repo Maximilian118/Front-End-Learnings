@@ -1,5 +1,5 @@
 import React from 'react';
-import './scss/person.css'
+import './scss/Person.css'
 
 // This is a stateless component. Notice no 'useState' or 'setState'.
 const person = props => {

@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
-// with CRA ejected and CSS Modules: true, we can now name import our CSS stylesheet
-// and access each class with dot syntax.
-import styles from './scss/app.css';
-import Person from './Person/Person';
-import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+import './scss/App.css';
+import People from '../components/People/People';
+import Cockpit from '../components/Cockpit/Cockpit';
 
 // This is a class-based component.
 // This is a statefull component. Notice there are 'setState' methods here.
@@ -25,7 +23,7 @@ class App extends Component {
     const personIndex = this.state.people.findIndex(p => {
       return p.id === id;
     });
-    // Extract .name from person and set it equal to user input.
+    // Extract .name from person obj and set it equal to user input.
     const person = {...this.state.people[personIndex]}
     person.name = event.target.value;
     // Extract original arr, find the correlating object and set it equal to person (user input).
@@ -51,34 +49,20 @@ class App extends Component {
 
   render() {
     let display = null;
-    let butColour = 'butColour';
     if (this.state.showPeople) {
-      // instead of displaying every <Person /> one bye one, use map.
-      // i = index. i will assign a unique number to each iteration of the loop.
-      // allowing us to differentiate each person in the deletePeople function.
-      display = (
-        <div>
-          {this.state.people.map((person, i) => {
-            // This <Person /> component has been wrapped in an <ErrorBoundary> component.
-            // This is how ErrorBoundary's are implemented on a certain component.
-            // NOTE: While using map, key's must be implemented on the outermost component.
-            return <ErrorBoundary> key={person.id}
-              <Person
-              delete={() => this.deletePeople(i)}
-              name={person.name} 
-              age={person.age}
-              change={event => this.changeNameHandler(event, person.id)} />
-              </ErrorBoundary>
-          })}
-        </div>
-      );
-      butColour = null;
+      display = <People 
+        people={this.state.people}
+        deleted={this.deletePeople} 
+        changed={this.changeNameHandler}/>
     }
 
+    // this.function is only referencing the function. Therefore the params passed are
+    // still within the function object.
     return (
-      <div className={styles.App}>
-        <h1>I'm a React App</h1>
-        <button className={butColour} onClick={this.togglePeopleHandler}><h3>Toggle People</h3></button>
+      <div className="App">
+        <Cockpit 
+          buttonColour={this.state.showPeople} 
+          togglePeople={this.togglePeopleHandler}/>
         {display}
       </div>
     );

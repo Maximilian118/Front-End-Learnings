@@ -1,0 +1,30 @@
+.App {
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    color: #19b5fe;
+  }
+  
+  button {
+    background: #d91e18;
+    border: none;
+    width: 120px;
+    height: 30px;
+    margin-bottom: 25px;
+    cursor: pointer;
+  
+    h3 {
+      height: 20px;
+      transform: translate(0, -8px);
+    }
+  }
+
+  .butColour {
+    background: #26c281;
+  }
+}

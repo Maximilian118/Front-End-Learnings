@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,OAAO,CAAC;EACN,KAAK,EAAE,GAAG;EACV,WAAW,EAAE,IAAI;EACjB,MAAM,EAAE,SAAS;EACjB,KAAK,EAAE,KAAK;EACZ,UAAU,EAAE,OAAO;EACnB,MAAM,EAAE,iBAAiB;EACzB,UAAU,EAAE,iBAAiB;EAC7B,UAAU,EAAE,MAAM;CACnB",
-    "sources": [
-        "person.scss"
-    ],
-    "names": [],
-    "file": "person.css"
-}

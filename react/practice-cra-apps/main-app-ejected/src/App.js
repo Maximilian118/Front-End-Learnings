@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
-import './scss/app.css';
+// with CRA ejected and CSS Modules: true, we can now name import our CSS stylesheet
+// and access each class with dot syntax.
+import styles from './scss/app.css';
 import Person from './Person/Person';
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 // This is a class-based component.
 // This is a statefull component. Notice there are 'setState' methods here.
@@ -56,12 +59,16 @@ class App extends Component {
       display = (
         <div>
           {this.state.people.map((person, i) => {
-            return <Person
+            // This <Person /> component has been wrapped in an <ErrorBoundary> component.
+            // This is how ErrorBoundary's are implemented on a certain component.
+            return <ErrorBoundary>
+              <Person
+              key={person.id}
               delete={() => this.deletePeople(i)}
               name={person.name} 
               age={person.age}
-              key={person.id}
               change={event => this.changeNameHandler(event, person.id)} />
+              </ErrorBoundary>
           })}
         </div>
       );
@@ -69,9 +76,9 @@ class App extends Component {
     }
 
     return (
-      <div className="App">
+      <div className={styles.App}>
         <h1>I'm a React App</h1>
-        <button className={butColour} onClick={this.togglePeopleHandler}><h3>Toggle People</h3></button>
+        <button className={styles.butColour} onClick={this.togglePeopleHandler}><h3>Toggle People</h3></button>
         {display}
       </div>
     );
