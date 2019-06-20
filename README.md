@@ -21,6 +21,8 @@ React Learning Points:
 - [X] Using Dev Tools with React.
 - [X] Implementing and using errorBoundaries.
 - [X] File Structure & Naming trends.
+- [X] Aux and Fragment containers.
+- [X] Higher order components. 
 
 Bootstrap Learning Points:
 

@@ -6,17 +6,16 @@ import Person from './Person/Person'
 // allowing us to differentiate each person in the deletePeople function.
 const People = props => { 
   useEffect(() => {
-    console.log('[Person.js] was executed')
+    console.log('[People.js] was rendered')
   }, [props.people]);
   
-  props.people.map((person, i) => {
-  return <Person
+  return props.people.map((person, i) => <Person
     delete={() => props.deleted(i)}
     name={person.name} 
     age={person.age}
     key={person.id}
     change={event => props.changed(event, person.id)} />
-  });
+  );
 }
 
 export default People;
