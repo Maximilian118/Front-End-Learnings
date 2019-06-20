@@ -1,5 +1,7 @@
 import React, {useEffect, Fragment} from 'react';
 import './scss/Cockpit.css'
+// Packages
+import PropTypes from 'prop-types';
 
 const Cockpit = props => {
   // useEffect is basically a replacement for Class component lifecycle hooks.
@@ -31,5 +33,12 @@ const Cockpit = props => {
       </Fragment>
     )
 };
+
+// When incorrect data types are passed into our props, throw an error.
+Cockpit.propTypes = {
+  title: PropTypes.string,
+  buttonColour: PropTypes.bool,
+  togglePeople: PropTypes.func
+}
 
 export default Cockpit;

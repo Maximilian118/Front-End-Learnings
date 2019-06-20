@@ -9,8 +9,8 @@ import Cockpit from '../components/Cockpit/Cockpit';
 import WithClass from '../hoc/WithClass';
 
 // This is a class-based component.
-// This is a statefull component. Notice there are 'setState' methods here.
-// PureComponent is exactly the same as Component except that it handles 
+// This is also a statefull component. Notice there are 'setState' methods here.
+// A PureComponent is exactly the same as Component except that it handles 
 // the shouldComponentUpdate method for you.
 class App extends PureComponent {
   state = {

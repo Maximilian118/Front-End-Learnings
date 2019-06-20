@@ -1,5 +1,8 @@
 import React, {useEffect} from 'react';
 import './scss/Person.css'
+// Packages.
+import PropTypes from 'prop-types';
+// Higher Order Functions.
 import WithClass from '../../../hoc/WithClass'
 
 // This is a stateless component. Notice no 'useState' or 'setState'.
@@ -35,5 +38,13 @@ const Person = props => {
     </WithClass>
   );
 }
+
+// When incorrect data types are passed into our props, throw an error.
+Person.propTypes = {
+  delete: PropTypes.func,
+  name: PropTypes.string,
+  age: PropTypes.number,
+  change: PropTypes.func
+};
 
 export default Person;
