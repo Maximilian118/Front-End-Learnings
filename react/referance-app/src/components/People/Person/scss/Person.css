@@ -1,6 +1,6 @@
 .person {
   width: 300px;
-  height: 75px;
+  height: 80px;
   margin: 20px auto;
   color: #e4f1fe;
   background: #34495e;
@@ -12,11 +12,10 @@
 .person input {
   background: #e4f1fe;
   text-align: center;
-  margin-top: 12.5px;
+  margin: 10px 0 5px;
 }
 
-.person h4 {
-  -webkit-transform: translate(0, -5px);
-          transform: translate(0, -5px);
+.person h6, .person h4 {
+  margin: 5px auto;
 }
 /*# sourceMappingURL=Person.css.map */

@@ -22,7 +22,9 @@ React Learning Points:
 - [X] Implementing and using errorBoundaries.
 - [X] File Structure & Naming trends.
 - [X] Aux and Fragment containers.
-- [X] Higher order components. 
+- [X] Higher order components.
+- [X] Packages such as PropTypes.
+- [X] Using a Context API.
 
 Bootstrap Learning Points:
 

@@ -4,104 +4,26 @@ node_modules
 
 ########################################## main-app
 # dependencies
-react/main-app/node_modules
-react/main-app/.pnp
-react/main-app/.pnp.js
-react/main-app/node_modules
-react/main-app/.pnp
-react/main-app/.pnp.js
+react/referance-app/node_modules
+react/referance-app/.pnp
+react/referance-app/.pnp.js
+react/referance-app/node_modules
+react/referance-app/.pnp
+react/referance-app/.pnp.js
 
 # testing
-react/main-app/coverage
+react/referance-app/coverage
 
 # production
-react/main-app/build
+react/referance-app/build
 
 # misc
-react/main-app/.DS_Store
-react/main-app/.env.local
-react/main-app/.env.development.local
-react/main-app/.env.test.local
-react/main-app/.env.production.local
+react/referance-app/.DS_Store
+react/referance-app/.env.local
+react/referance-app/.env.development.local
+react/referance-app/.env.test.local
+react/referance-app/.env.production.local
 
-react/main-app/npm-debug.log*
-react/main-app/yarn-debug.log*
-react/main-app/yarn-error.log*
-
-########################################## main-app-ejected
-# dependencies
-react/practice-cra-apps/main-app-ejected/node_modules
-react/practice-cra-apps/main-app-ejected/.pnp
-react/practice-cra-apps/main-app-ejected/.pnp.js
-react/practice-cra-apps/main-app-ejected/node_modules
-react/practice-cra-apps/main-app-ejected/.pnp
-react/practice-cra-apps/main-app-ejected/.pnp.js
-
-# testing
-react/practice-cra-apps/main-app-ejected/coverage
-
-# production
-react/practice-cra-apps/main-app-ejected/build
-
-# misc
-react/practice-cra-apps/main-app-ejected/.DS_Store
-react/practice-cra-apps/main-app-ejected/.env.local
-react/practice-cra-apps/main-app-ejected/.env.development.local
-react/practice-cra-apps/main-app-ejected/.env.test.local
-react/practice-cra-apps/main-app-ejected/.env.production.local
-
-react/practice-cra-apps/main-app-ejected/npm-debug.log*
-react/practice-cra-apps/main-app-ejected/yarn-debug.log*
-react/practice-cra-apps/main-app-ejected/yarn-error.log*
-
-########################################## practice-app
-# dependencies
-react/practice-cra-apps/practice-app/node_modules
-react/practice-cra-apps/practice-app/.pnp
-react/practice-cra-apps/practice-app/.pnp.js
-react/practice-cra-apps/practice-app/node_modules
-react/practice-cra-apps/practice-app/.pnp
-react/practice-cra-apps/practice-app/.pnp.js
-
-# testing
-react/practice-cra-apps/practice-app/coverage
-
-# production
-react/practice-cra-apps/practice-app/build
-
-# misc
-react/practice-cra-apps/practice-app/.DS_Store
-react/practice-cra-apps/practice-app/.env.local
-react/practice-cra-apps/practice-app/.env.development.local
-react/practice-cra-apps/practice-app/.env.test.local
-react/practice-cra-apps/practice-app/.env.production.local
-
-react/practice-cra-apps/practice-app/npm-debug.log*
-react/practice-cra-apps/practice-app/yarn-debug.log*
-react/practice-cra-apps/practice-app/yarn-error.log*
-
-##########################################/practice-cra-apps/practice-app-2
-# dependencies
-react/practice-cra-apps/practice-app-2/node_modules
-react/practice-cra-apps/practice-app-2/.pnp
-react/practice-cra-apps/practice-app-2/.pnp.js
-react/practice-cra-apps/practice-app-2/node_modules
-react/practice-cra-apps/practice-app-2/.pnp
-react/practice-cra-apps/practice-app-2/.pnp.js
-
-# testing
-react/practice-cra-apps/practice-app-2/coverage
-
-# production
-react/practice-cra-apps/practice-app-2/build
-
-# misc
-react/practice-cra-apps/practice-app-2/.DS_Store
-react/practice-cra-apps/practice-app-2/.env.local
-react/practice-cra-apps/practice-app-2/.env.development.local
-react/practice-cra-apps/practice-app-2/.env.test.local
-react/practice-cra-apps/practice-app-2/.env.production.local
-
-react/practice-cra-apps/practice-app-2/npm-debug.log*
-react/practice-cra-apps/practice-app-2/yarn-debug.log*
-react/practice-cra-apps/practice-app-2/yarn-error.log*
+react/referance-app/npm-debug.log*
+react/referance-app/yarn-debug.log*
+react/referance-app/yarn-error.log*

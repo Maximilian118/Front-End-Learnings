@@ -1,3 +1,7 @@
+h1 {
+  margin: 0 0 30px;
+}
+
 button {
   background: #d91e18;
   border: none;
@@ -12,6 +16,14 @@ button {
   }
 }
 
+.notLoggedIn {
+  background: #d91e18;
+}
+
 .buttonColour {
+  background: #26c281;
+}
+
+.login {
   background: #26c281;
 }

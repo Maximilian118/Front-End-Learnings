@@ -1,6 +1,6 @@
 .person {
   width: 300px;
-  height: 75px;
+  height: 80px;
   margin: 20px auto;
   color: #e4f1fe;
   background: #34495e;
@@ -10,10 +10,10 @@
   input {
     background: #e4f1fe;
     text-align: center;
-    margin-top: 12.5px;
+    margin: 10px 0 5px;
   }
 
-  h4 {
-    transform: translate(0, -5px);
+  h6, h4 {
+    margin: 5px auto;
   }
 }

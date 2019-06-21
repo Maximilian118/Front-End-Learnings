@@ -1,3 +1,7 @@
+h1 {
+  margin: 0 0 30px;
+}
+
 button {
   background: #d91e18;
   border: none;
@@ -13,7 +17,15 @@ button h3 {
           transform: translate(0, -8px);
 }
 
+.notLoggedIn {
+  background: #d91e18;
+}
+
 .buttonColour {
+  background: #26c281;
+}
+
+.login {
   background: #26c281;
 }
 /*# sourceMappingURL=Cockpit.css.map */

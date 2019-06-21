@@ -1,12 +1,12 @@
 import React, {PureComponent} from 'react';
 import './scss/App.css';
-
 // Components
 import People from '../components/People/People';
 import Cockpit from '../components/Cockpit/Cockpit';
-
 // Higher Order Components
 import WithClass from '../hoc/WithClass';
+// Context
+import AuthContext from '../context/auth-context';
 
 // This is a class-based component.
 // This is also a statefull component. Notice there are 'setState' methods here.
@@ -22,7 +22,13 @@ class App extends PureComponent {
       {id: 'lk9', name: 'Brad', age: 26}
     ],
     anotherState: 'This will not change when switchNameHandler is fired',
-    showPeople: false
+    showPeople: false,
+    isLoggedIn: false
+  };
+
+  loggedInHandler = () => {
+    const click = this.state.isLoggedIn;
+    this.setState({isLoggedIn: !click});
   };
 
   changeNameHandler = (event, id) => {
@@ -63,16 +69,21 @@ class App extends PureComponent {
         changed={this.changeNameHandler}/>
     }
 
-    // this.function is only referencing the function. Therefore the params passed are
-    // still within the function object.
+    // this.function syntax is only referencing the function. Therefore the params 
+    // passed are still within the function object.
     return (
-      <WithClass classes="App">
-        <Cockpit
-          title={this.props.title}
-          buttonColour={this.state.showPeople} 
-          togglePeople={this.togglePeopleHandler}/>
-        {display}
-      </WithClass>
+      <AuthContext.Provider value={{
+        authenticated: this.state.isLoggedIn,
+        login: this.loggedInHandler}}>
+        <WithClass classes="App">
+          <Cockpit
+            title={this.props.title}
+            buttonColour={this.state.showPeople} 
+            togglePeople={this.togglePeopleHandler}
+            loggedIn={this.state.isLoggedIn}/>
+          {display}
+        </WithClass>
+      </AuthContext.Provider>
     );
   };
 };
