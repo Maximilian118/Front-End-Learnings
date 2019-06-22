@@ -2,7 +2,8 @@
 node_modules
 .DS_Store
 
-########################################## main-app
+########################################## referance-app
+
 # dependencies
 react/referance-app/node_modules
 react/referance-app/.pnp
@@ -27,3 +28,30 @@ react/referance-app/.env.production.local
 react/referance-app/npm-debug.log*
 react/referance-app/yarn-debug.log*
 react/referance-app/yarn-error.log*
+
+########################################## burger-builder
+
+# dependencies
+react/burger-builder/node_modules
+react/burger-builder/.pnp
+react/burger-builder/.pnp.js
+react/burger-builder/node_modules
+react/burger-builder/.pnp
+react/burger-builder/.pnp.js
+
+# testing
+react/burger-builder/coverage
+
+# production
+react/burger-builder/build
+
+# misc
+react/burger-builder/.DS_Store
+react/burger-builder/.env.local
+react/burger-builder/.env.development.local
+react/burger-builder/.env.test.local
+react/burger-builder/.env.production.local
+
+react/burger-builder/npm-debug.log*
+react/burger-builder/yarn-debug.log*
+react/burger-builder/yarn-error.log*
