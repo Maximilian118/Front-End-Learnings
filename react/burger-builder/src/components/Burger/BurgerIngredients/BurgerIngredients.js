@@ -34,7 +34,7 @@ class BurgerIngredient extends Component {
         ingredient = null;
     };
     return ingredient; 
-  }
+  };
 };
 
 BurgerIngredient.propTypes = {

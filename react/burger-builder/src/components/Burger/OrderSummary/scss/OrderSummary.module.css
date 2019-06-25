@@ -1,0 +1,18 @@
+.OrderSummary {
+  text-align: center;
+}
+
+.OrderSummary ul {
+  width: 20%;
+  margin-left: 36.5%;
+}
+
+.OrderSummary ul li {
+  text-align: left;
+}
+
+.OrderSummary button {
+  -webkit-transform: translate(15px);
+          transform: translate(15px);
+}
+/*# sourceMappingURL=OrderSummary.module.css.map */

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,aAAa,CAAC;EACZ,UAAU,EAAE,MAAM;CAanB;;AAdD,AAEE,aAFW,CAEX,EAAE,CAAC;EACD,KAAK,EAAE,GAAG;EACV,WAAW,EAAE,KAAK;CAKnB;;AATH,AAMI,aANS,CAEX,EAAE,CAIA,EAAE,CAAC;EACD,UAAU,EAAE,IAAI;CACjB;;AARL,AAWE,aAXW,CAWX,MAAM,CAAC;EACL,SAAS,EAAE,eAAe;CAC3B",
+    "sources": [
+        "OrderSummary.module.scss"
+    ],
+    "names": [],
+    "file": "OrderSummary.module.css"
+}

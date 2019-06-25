@@ -2,10 +2,11 @@
   width: 100%;
   margin: auto;
   height: 250px;
-  overflow: scroll;
+  overflow-y: auto;
   text-align: center;
   font-weight: bold;
   font-size: 1.2rem;
+  color: #eb9532;
 }
 
 @media (min-width: 500px) and (min-height: 400px) {

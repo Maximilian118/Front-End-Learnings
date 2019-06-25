@@ -1,0 +1,30 @@
+.NavLink {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.NavLink a {
+  color: whitesmoke;
+  text-decoration: none;
+  height: 100%;
+  padding: 16px 10px;
+  border-bottom: 4px solid transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+}
+
+.NavLink a:hover, .NavLink a:active, .NavLink a.active {
+  background-color: #8F5C2C;
+  border-bottom: 4px solid #40A4C8;
+  color: white;
+}
+/*# sourceMappingURL=Navlink.module.css.map */

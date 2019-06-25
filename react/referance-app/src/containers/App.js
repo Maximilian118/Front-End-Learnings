@@ -50,8 +50,10 @@ class App extends PureComponent {
   // I.E in a way that doesn't directly change the data in state = {}.
   deletePeople = i => {
     const people = [...this.state.people]
+    const obj = {...this.state.people}
     people.splice(i, 1);
     this.setState({people: people});
+    console.log(obj)
   };
 
   // Switch showPeople between truthy and falsy.

@@ -1,0 +1,13 @@
+.Logo {
+  background-color: whitesmoke;
+  padding: 5px;
+  height: 70%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.Logo img {
+  height: 100%;
+}
+/*# sourceMappingURL=Logo.module.css.map */
