@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 import Burger from '../../components/Burger/Burger'
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 import Modal from '../../components/UI/Modal/Modal';
@@ -86,7 +86,7 @@ class BurgerBuilder extends Component {
     };
 
     return (
-      <Fragment>
+      <>
         <Modal 
           show={this.state.review} 
           modalClose={this.closeReviewHandler}>
@@ -104,7 +104,7 @@ class BurgerBuilder extends Component {
           ingredientRemoved={this.removeIngredientHandler}
           lessDisabled={disable}
           orderClicked={this.reviewHandler}/>
-      </Fragment>
+      </>
     );
   };
 };

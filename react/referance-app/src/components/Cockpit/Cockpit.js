@@ -1,4 +1,4 @@
-import React, {useEffect, Fragment, useRef, useContext} from 'react';
+import React, {useEffect, useRef, useContext} from 'react';
 import './scss/Cockpit.css'
 // Packages
 import PropTypes from 'prop-types';
@@ -43,9 +43,9 @@ const Cockpit = props => {
   // ]
   //
   // Alternatively, React has a built in method to solve this problem.
-  // Simply import and wrap your JSX with <Fragment>. <Fragment> does not render to the DOM.
+  // Simply import and wrap your JSX with <Fragment>. <> does not render to the DOM.
   return (
-    <Fragment>
+    <>
       <h1>{props.title}</h1>
       <button 
         onClick={authContext.login}
@@ -54,7 +54,7 @@ const Cockpit = props => {
         ref={toggleBtnRef}
         className={buttonColour} 
         onClick={props.togglePeople}><h3>Toggle People</h3></button>
-    </Fragment>
+    </>
   );
 };
 

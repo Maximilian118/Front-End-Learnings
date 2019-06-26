@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import classes from './scss/Modal.module.css';
 import WithClass from '../../../hoc/WithClass';
 import Backdrop from '../Backdrop/Backdrop';
@@ -10,12 +10,12 @@ const displayModal = props => {
   }
 
   return (
-    <Fragment>
+    <>
       <Backdrop show={props.show} clicked={props.modalClose}/>
       <WithClass classes={hideModal}>
         {props.children}
       </WithClass>
-    </Fragment>
+    </>
   )
 };
 

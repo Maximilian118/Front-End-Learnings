@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 import './scss/App.module.css';
 
 import Layout from '../components/Layout/Layout'
@@ -8,11 +8,11 @@ class App extends Component {
 
   render() {
     return (
-      <Fragment>
+      <>
         <Layout>
           <BurgerBuilder />
         </Layout>
-      </Fragment>
+      </>
     );
   };
 };
