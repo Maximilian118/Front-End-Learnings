@@ -1,0 +1,31 @@
+.MenuLink {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  width: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+}
+
+.MenuLink a {
+  color: whitesmoke;
+  height: 20px;
+  padding: 0 10px;
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-bottom: 4px solid transparent;
+}
+
+.MenuLink:hover, .MenuLink:active, .MenuLink.active {
+  background-color: #8F5C2C;
+  border-bottom: 4px solid #40A4C8;
+  color: white;
+}
+/*# sourceMappingURL=Menulink.module.css.map */

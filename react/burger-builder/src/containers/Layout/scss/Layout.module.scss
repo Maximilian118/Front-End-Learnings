@@ -1,0 +1,17 @@
+.Toolbar {
+  height: 5vh;
+}
+
+.Main {
+  height: 95vh;
+}
+
+@media (max-width: 499px) {
+  .Toolbar {
+    height: 7vh;
+  }
+  
+  .Main {
+    height: 93vh;
+  }
+}

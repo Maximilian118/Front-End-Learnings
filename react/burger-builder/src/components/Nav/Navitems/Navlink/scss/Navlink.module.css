@@ -1,46 +1,53 @@
 .NavLink {
-  margin: 10px 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  width: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  display: block;
-  width: 100%;
+  cursor: pointer;
 }
 
 .NavLink a {
-  color: #8F5C2C;
+  color: whitesmoke;
   text-decoration: none;
-  width: 100%;
+  height: 20px;
+  padding: 0 10px;
+  display: block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  display: block;
+  border-bottom: 4px solid transparent;
 }
 
-.NavLink a:hover, .NavLink a:active, .NavLink a.active {
-  color: #40A4C8;
+.NavLink:hover, .NavLink:active, .NavLink.active {
+  background-color: #8F5C2C;
+  border-bottom: 4px solid #40A4C8;
+  color: white;
 }
 
-@media (min-width: 500px) {
+@media (max-width: 499px) {
   .NavLink {
-    margin: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    height: 100%;
-    width: auto;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    margin: 10px 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: block;
+    width: 100%;
   }
   .NavLink a {
-    color: whitesmoke;
-    height: 100%;
-    padding: 16px 10px;
-    border-bottom: 4px solid transparent;
+    color: #8F5C2C;
+    text-decoration: none;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: block;
   }
   .NavLink a:hover, .NavLink a:active, .NavLink a.active {
-    background-color: #8F5C2C;
-    border-bottom: 4px solid #40A4C8;
-    color: white;
+    color: #40A4C8;
   }
 }
 /*# sourceMappingURL=Navlink.module.css.map */

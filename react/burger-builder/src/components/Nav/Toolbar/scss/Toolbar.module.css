@@ -1,5 +1,5 @@
 .Toolbar {
-  height: 50px;
+  height: 5vh;
   width: 100%;
   position: fixed;
   top: 0;
@@ -26,9 +26,34 @@
 
 .Logo {
   height: 80%;
+  padding-right: 10px;
+}
+
+.Flex {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.MenuLinkHide {
+  display: none;
+  height: 100%;
 }
 
 @media (max-width: 499px) {
+  .MenuLinkHide {
+    display: block;
+  }
+  .Toolbar {
+    height: 7vh;
+  }
   .Desktop {
     display: none;
   }

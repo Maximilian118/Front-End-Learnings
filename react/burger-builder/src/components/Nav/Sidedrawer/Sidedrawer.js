@@ -6,11 +6,15 @@ import NavItems from '../Navitems/Navitems';
 import Backdrop from '../../UI/Backdrop/Backdrop';
 
 const sideDrawer = props => {
+  let openClose = [classes.SideDrawer, classes.Close]
+  if (props.open) {
+    openClose = [classes.SideDrawer, classes.Open]
+  }
 
   return (
     <>
-      <Backdrop />
-      <WithClass classes={classes.SideDrawer}>
+      <Backdrop show={props.open} clicked={props.closed}/>
+      <WithClass classes={openClose.join(' ')}>
         <WithClass classes={classes.Logo}>
           <Logo />
         </WithClass>

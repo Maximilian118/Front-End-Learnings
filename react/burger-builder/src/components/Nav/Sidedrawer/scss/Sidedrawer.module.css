@@ -10,30 +10,30 @@
   padding: 32px 16px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-transition: -webkit-transform 0.3 ease-out;
-  transition: -webkit-transform 0.3 ease-out;
-  transition: transform 0.3 ease-out;
-  transition: transform 0.3 ease-out, -webkit-transform 0.3 ease-out;
+}
+
+.Open {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+.Close {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+}
+
+.Logo {
+  height: 11%;
+  margin-bottom: 32px;
 }
 
 @media (min-width: 500px) {
   .SideDrawer {
     display: none;
   }
-}
-
-.Open {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-}
-
-.Close {
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
-}
-
-.Logo {
-  height: 11%;
-  margin-bottom: 32px;
 }
 /*# sourceMappingURL=Sidedrawer.module.css.map */

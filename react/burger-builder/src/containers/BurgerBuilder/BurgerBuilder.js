@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
+import classes from './scss/BurgerBuilder.module.css';
 import Burger from '../../components/Burger/Burger'
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 import Modal from '../../components/UI/Modal/Modal';
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary'
+import WithClass from '../../hoc/WithClass';
 
 const INGREDIENT_PRICES = {
   salad: 0.5,
@@ -96,14 +98,16 @@ class BurgerBuilder extends Component {
             continue={this.continueReviewHandler}
             totalPrice={this.state.totalPrice}/>
         </Modal>
-        <Burger ingredients={this.state.ingredients}/>
-        <BuildControls 
-          price={this.state.totalPrice}
-          canPurchase={this.state.canPurchase}
-          ingredientAdded={this.addIngredientHandler} 
-          ingredientRemoved={this.removeIngredientHandler}
-          lessDisabled={disable}
-          orderClicked={this.reviewHandler}/>
+        <WithClass classes={classes.Main}>
+          <Burger ingredients={this.state.ingredients}/>
+          <BuildControls 
+            price={this.state.totalPrice}
+            canPurchase={this.state.canPurchase}
+            ingredientAdded={this.addIngredientHandler} 
+            ingredientRemoved={this.removeIngredientHandler}
+            lessDisabled={disable}
+            orderClicked={this.reviewHandler}/>
+        </WithClass>
       </>
     );
   };
