@@ -23,8 +23,9 @@ React Learning Points:
 - [X] File Structure & Naming trends.
 - [X] Aux and Fragment containers.
 - [X] Higher order components.
-- [X] Packages such as PropTypes.
+- [X] Packages such as PropTypes and Axios.
 - [X] Using a Context API.
+- [X] HTTP Requests with lifecycle functions.
 
 Bootstrap Learning Points:
 

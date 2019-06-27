@@ -55,3 +55,30 @@ react/burger-builder/.env.production.local
 react/burger-builder/npm-debug.log*
 react/burger-builder/yarn-debug.log*
 react/burger-builder/yarn-error.log*
+
+########################################## http-ajax
+
+# dependencies
+react/http-ajax/node_modules
+react/http-ajax/.pnp
+react/http-ajax/.pnp.js
+react/http-ajax/node_modules
+react/http-ajax/.pnp
+react/http-ajax/.pnp.js
+
+# testing
+react/http-ajax/coverage
+
+# production
+react/http-ajax/build
+
+# misc
+react/http-ajax/.DS_Store
+react/http-ajax/.env.local
+react/http-ajax/.env.development.local
+react/http-ajax/.env.test.local
+react/http-ajax/.env.production.local
+
+react/http-ajax/npm-debug.log*
+react/http-ajax/yarn-debug.log*
+react/http-ajax/yarn-error.log*
