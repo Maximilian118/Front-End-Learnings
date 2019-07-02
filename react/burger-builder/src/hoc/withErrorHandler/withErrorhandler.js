@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Modal from '../../components/UI/Modal/Modal';
-import axios from 'axios';
 
-const withErrorhandler = WrappedComponent => {
+const withErrorhandler = (WrappedComponent, axios) => {
   return props => {
     const [err, setError] = useState(null);
 
@@ -21,7 +20,7 @@ const withErrorhandler = WrappedComponent => {
         axios.interceptors.response.eject(resInterceptor);
       };
     }, [reqInterceptor, resInterceptor]);
-
+ 
     const errorConfirmedHandler = () => {
       setError(null);
     };

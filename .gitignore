@@ -56,29 +56,29 @@ react/burger-builder/npm-debug.log*
 react/burger-builder/yarn-debug.log*
 react/burger-builder/yarn-error.log*
 
-########################################## http-ajax
+########################################## http-ajax-cra
 
 # dependencies
-react/http-ajax/node_modules
-react/http-ajax/.pnp
-react/http-ajax/.pnp.js
-react/http-ajax/node_modules
-react/http-ajax/.pnp
-react/http-ajax/.pnp.js
+react/http-ajax-cra/node_modules
+react/http-ajax-cra/.pnp
+react/http-ajax-cra/.pnp.js
+react/http-ajax-cra/node_modules
+react/http-ajax-cra/.pnp
+react/http-ajax-cra/.pnp.js
 
 # testing
-react/http-ajax/coverage
+react/http-ajax-cra/coverage
 
 # production
-react/http-ajax/build
+react/http-ajax-cra/build
 
 # misc
-react/http-ajax/.DS_Store
-react/http-ajax/.env.local
-react/http-ajax/.env.development.local
-react/http-ajax/.env.test.local
-react/http-ajax/.env.production.local
+react/http-ajax-cra/.DS_Store
+react/http-ajax-cra/.env.local
+react/http-ajax-cra/.env.development.local
+react/http-ajax-cra/.env.test.local
+react/http-ajax-cra/.env.production.local
 
-react/http-ajax/npm-debug.log*
-react/http-ajax/yarn-debug.log*
-react/http-ajax/yarn-error.log*
+react/http-ajax-cra/npm-debug.log*
+react/http-ajax-cra/yarn-debug.log*
+react/http-ajax-cra/yarn-error.log*

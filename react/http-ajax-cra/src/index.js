@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 import axios from 'axios';
 
 // Every request URL using axios will now be appended with this URL leading to less
@@ -35,4 +34,3 @@ axios.interceptors.response.use(res => {
 });
 
 ReactDOM.render( <App />, document.getElementById( 'root' ) );
-registerServiceWorker();

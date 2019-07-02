@@ -1,20 +1,14 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './scss/App.module.css';
 
 import Layout from '../containers/Layout/Layout';
 import BurgerBuilder from './BurgerBuilder/BurgerBuilder';
 
-class App extends Component {
+const app = () => 
+  <>
+    <Layout>
+      <BurgerBuilder />
+    </Layout>
+  </>
 
-  render() {
-    return (
-      <>
-        <Layout>
-          <BurgerBuilder />
-        </Layout>
-      </>
-    );
-  };
-};
-
-export default App;
+export default app;

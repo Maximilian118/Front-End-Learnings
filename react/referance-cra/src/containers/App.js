@@ -1,5 +1,7 @@
 import React, {PureComponent} from 'react';
 import './scss/App.css';
+// Packages
+import {BrowserRouter, Route} from 'react-router-dom';
 // Components
 import People from '../components/People/People';
 import Cockpit from '../components/Cockpit/Cockpit';
@@ -63,29 +65,40 @@ class App extends PureComponent {
   };
 
   render() {
-    let display = null;
+    let people = null;
     if (this.state.showPeople) {
-      display = <People 
+      people = <People 
         people={this.state.people}
         deleted={this.deletePeople} 
         changed={this.changeNameHandler}/>
     }
 
-    // this.function syntax is only referencing the function. Therefore the params 
-    // passed are still within the function object.
+    // After importing BrowserRouter and Route we can use Route to define all of our
+    // URL routes. Route must be wrapped within BrowserRouter. BrowserRouter is commonly
+    // used on one of the outermost containers.
     return (
-      <AuthContext.Provider value={{
-        authenticated: this.state.isLoggedIn,
-        login: this.loggedInHandler}}>
-        <WithClass classes="App">
-          <Cockpit
-            title={this.props.title}
-            buttonColour={this.state.showPeople} 
-            togglePeople={this.togglePeopleHandler}
-            loggedIn={this.state.isLoggedIn}/>
-          {display}
-        </WithClass>
-      </AuthContext.Provider>
+      <BrowserRouter>
+        <AuthContext.Provider value={{
+          authenticated: this.state.isLoggedIn,
+          login: this.loggedInHandler}}>
+          <WithClass classes="App">
+        {/* Path defines our URL route appending to our default route set normally in index 
+            Exact means that in order render the content the specified path must be... exact.
+            for example without exact here this route will load any link starting with '/'.
+            
+            If you wish to pass props to a component using Route you can use this syntax: */}
+            <Route path="/" exact render={routeProps => (
+              <Cockpit {...routeProps}
+                title={this.props.title}
+                buttonColour={this.state.showPeople} 
+                togglePeople={this.togglePeopleHandler}
+                loggedIn={this.state.isLoggedIn}/>
+            )}/>
+        {/* Component can be used to render an imported Component like this: */}
+            <Route path="/" exact component={people}/>
+          </WithClass>
+        </AuthContext.Provider>
+      </BrowserRouter>
     );
   };
 };
