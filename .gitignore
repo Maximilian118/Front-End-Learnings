@@ -5,29 +5,29 @@ node_modules
 ########################################## referance-app
 
 # dependencies
-react/referance-app/node_modules
-react/referance-app/.pnp
-react/referance-app/.pnp.js
-react/referance-app/node_modules
-react/referance-app/.pnp
-react/referance-app/.pnp.js
+react/reference/node_modules
+react/reference/.pnp
+react/reference/.pnp.js
+react/reference/node_modules
+react/reference/.pnp
+react/reference/.pnp.js
 
 # testing
-react/referance-app/coverage
+react/reference/coverage
 
 # production
-react/referance-app/build
+react/reference/build
 
 # misc
-react/referance-app/.DS_Store
-react/referance-app/.env.local
-react/referance-app/.env.development.local
-react/referance-app/.env.test.local
-react/referance-app/.env.production.local
+react/reference/.DS_Store
+react/reference/.env.local
+react/reference/.env.development.local
+react/reference/.env.test.local
+react/reference/.env.production.local
 
-react/referance-app/npm-debug.log*
-react/referance-app/yarn-debug.log*
-react/referance-app/yarn-error.log*
+react/reference/npm-debug.log*
+react/reference/yarn-debug.log*
+react/reference/yarn-error.log*
 
 ########################################## burger-builder
 
@@ -59,26 +59,53 @@ react/burger-builder/yarn-error.log*
 ########################################## http-ajax-cra
 
 # dependencies
-react/http-ajax-cra/node_modules
-react/http-ajax-cra/.pnp
-react/http-ajax-cra/.pnp.js
-react/http-ajax-cra/node_modules
-react/http-ajax-cra/.pnp
-react/http-ajax-cra/.pnp.js
+react/http-ajax/node_modules
+react/http-ajax/.pnp
+react/http-ajax/.pnp.js
+react/http-ajax/node_modules
+react/http-ajax/.pnp
+react/http-ajax/.pnp.js
 
 # testing
-react/http-ajax-cra/coverage
+react/http-ajax/coverage
 
 # production
-react/http-ajax-cra/build
+react/http-ajax/build
 
 # misc
-react/http-ajax-cra/.DS_Store
-react/http-ajax-cra/.env.local
-react/http-ajax-cra/.env.development.local
-react/http-ajax-cra/.env.test.local
-react/http-ajax-cra/.env.production.local
+react/http-ajax/.DS_Store
+react/http-ajax/.env.local
+react/http-ajax/.env.development.local
+react/http-ajax/.env.test.local
+react/http-ajax/.env.production.local
 
-react/http-ajax-cra/npm-debug.log*
-react/http-ajax-cra/yarn-debug.log*
-react/http-ajax-cra/yarn-error.log*
+react/http-ajax/npm-debug.log*
+react/http-ajax/yarn-debug.log*
+react/http-ajax/yarn-error.log*
+
+########################################## lazy-loading
+
+# dependencies
+react/lazy-loading-react-suspense/node_modules
+react/lazy-loading-react-suspense/.pnp
+react/lazy-loading-react-suspense/.pnp.js
+react/lazy-loading-react-suspense/node_modules
+react/lazy-loading-react-suspense/.pnp
+react/lazy-loading-react-suspense/.pnp.js
+
+# testing
+react/lazy-loading-react-suspense/coverage
+
+# production
+react/lazy-loading-react-suspense/build
+
+# misc
+react/lazy-loading-react-suspense/.DS_Store
+react/lazy-loading-react-suspense/.env.local
+react/lazy-loading-react-suspense/.env.development.local
+react/lazy-loading-react-suspense/.env.test.local
+react/lazy-loading-react-suspense/.env.production.local
+
+react/lazy-loading-react-suspense/npm-debug.log*
+react/lazy-loading-react-suspense/yarn-debug.log*
+react/lazy-loading-react-suspense/yarn-error.log*

@@ -6,7 +6,7 @@ import axiosInstance from '../../../axios';
 import Post from '../../../components/Post/Post';
 import FullPost from '../FullPost/FullPost';
 
-const Posts = () => {
+const Posts = props => {
   const [postArr, setPosts] = useState({posts: []});
   const err = useState({error: false});
 
@@ -29,20 +29,20 @@ const Posts = () => {
   if (!err.error) {
     posts = postArr.posts.map(post => {
       return (
-        <Link to={`/${post.id}`} key={post.id}>
+        <Link to={`${props.match.url}/${post.id}`} key={post.id}>
           <Post  
             title={post.title} 
             author={post.author}/>
         </Link> );
     });
   };
-
+  
   return (
     <>
       <section className="Posts">
         {posts}
       </section>
-      <Route path="/:id" exact component={FullPost}/>
+      <Route path={`${props.match.url}/:id`} exact component={FullPost}/>
     </>
   );
 }

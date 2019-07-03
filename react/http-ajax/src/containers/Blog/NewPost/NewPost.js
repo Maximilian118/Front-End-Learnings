@@ -8,6 +8,7 @@ class NewPost extends Component {
         title: '',
         content: '',
         author: 'Max'
+        // submitted: false
     }
 
     postDataHandler = () => {
@@ -19,9 +20,16 @@ class NewPost extends Component {
         axios.post('/posts', data)
             .then(res => console.log(res))
             .catch(err => console.log(err));
+        // like redirect but better. No need to use state.
+        this.props.history.replace('/posts');
+        // this.setState({submitted: true})
     }
 
     render () {
+        // let redirect = null;
+        // if (this.state.submitted) {
+        //     redirect = <Redirect to="/posts"/>;    
+        // }
         return (
             <div className="NewPost">
                 <h1>Add a Post</h1>
@@ -35,6 +43,7 @@ class NewPost extends Component {
                     <option value="Manu">Manu</option>
                 </select>
                 <button onClick={this.postDataHandler}>Add Post</button>
+                {/* {redirect} */}
             </div>
         );
     }
