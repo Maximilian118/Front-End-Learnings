@@ -1,13 +1,16 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import classes from './scss/BurgerBuilder.module.css';
+// UI
 import Modal from '../../components/UI/Modal/Modal';
 import Spinner from '../../components/UI/Spinner/Spinner';
+// Higher Order Components
+import WithClass from '../../hoc/WithClass';
+import withErrorHandler from '../../hoc/withErrorHandler/withErrorhandler';
+// Components
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
-import WithClass from '../../hoc/WithClass';
-import withErrorHandler from '../../hoc/withErrorHandler/withErrorhandler';
 
 const INGREDIENT_PRICES = {
   salad: 0.5,
@@ -29,7 +32,6 @@ class BurgerBuilder extends Component {
     axios.get('https://burger-builder-703cc.firebaseio.com/ingredients.json')
       .then(res => {
         this.setState({ingredients: res.data})
-        console.log(this.state.ingredients)
       })
       .catch(err => {
         this.setState({error: true})
@@ -88,33 +90,6 @@ class BurgerBuilder extends Component {
     this.setState({review: false});
   };
 
-  continueReviewHandler = () => {
-    this.setState({loading: true})
-    const order = {
-      ingredients: this.state.ingredients, 
-      price: this.state.totalPrice.toFixed(2),
-      customer: {
-        name: 'Maximilian Crosby',
-        address: {
-          street: 'Teststreet 1',
-          postCode: 'DA156RE',
-          country: 'UK'
-        },
-        email: 'test@test.com'
-      },
-      deliveryMethod: 'fastest'
-    };
-    axios.post('/orders.json', order)
-      .then(res => {
-        this.setState({loading: false, review: false});
-        console.log(res);
-      })
-      .catch(err => {
-        this.setState({loading: false, review: false});
-        console.log(err);
-      });
-  };
-
   render() {
     const disable = {
       ...this.state.ingredients
@@ -142,7 +117,6 @@ class BurgerBuilder extends Component {
       orderSummary = <OrderSummary 
       ingredients={this.state.ingredients}
       modalClose={this.closeReviewHandler}
-      continue={this.continueReviewHandler}
       totalPrice={this.state.totalPrice}/>;
     };
 

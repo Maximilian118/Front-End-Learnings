@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import classes from './scss/Burger.module.css';
 import WithClass from '../../hoc/WithClass';
 import BurgerIngredients from './BurgerIngredients/BurgerIngredients';
@@ -25,4 +26,5 @@ const burger = props => {
   );
 };
 
-export default burger;
+// allows us to see the nearest wrapping Route's props.
+export default withRouter(burger);

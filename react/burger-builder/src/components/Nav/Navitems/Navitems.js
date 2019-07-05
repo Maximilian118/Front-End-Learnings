@@ -4,8 +4,8 @@ import NavLink from './Navlink/Navlink';
 
 const navItems = props => (
   <ul className={classes.NavItems}>
-    <NavLink link="/" active>Burger Builder</NavLink>
-    <NavLink link="/">Checkout</NavLink>
+      <NavLink link="/" active>Burger Builder</NavLink>
+      <NavLink link="/">Checkout</NavLink>
   </ul>
 );
 
