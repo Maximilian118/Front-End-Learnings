@@ -1,0 +1,17 @@
+.Order {
+  color: whitesmoke;
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 2px 3px #ccc;
+          box-shadow: 0 2px 3px #ccc;
+  padding: 10px 30px;
+  margin: 10px auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.Order p {
+  text-transform: capitalize;
+}
+/*# sourceMappingURL=Order.module.css.map */

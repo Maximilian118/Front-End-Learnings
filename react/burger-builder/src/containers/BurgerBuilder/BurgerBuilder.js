@@ -29,7 +29,7 @@ class BurgerBuilder extends Component {
   };
 
   componentDidMount () {
-    axios.get('https://burger-builder-703cc.firebaseio.com/ingredients.json')
+    axios.get('/ingredients.json')
       .then(res => {
         this.setState({ingredients: res.data})
       })
@@ -120,11 +120,8 @@ class BurgerBuilder extends Component {
       totalPrice={this.state.totalPrice}/>;
     };
 
-    if (this.state.loading) {
-      orderSummary = <Spinner />;
-    };
-
-    return (
+    return this.state.loading ? 
+      orderSummary = <Spinner /> : (
       <>
         <Modal 
           show={this.state.review} 

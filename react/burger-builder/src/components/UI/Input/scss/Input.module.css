@@ -1,0 +1,42 @@
+.Input {
+  width: 100%;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.Input p {
+  position: absolute;
+  -webkit-transform: translate(0, -45px);
+          transform: translate(0, -45px);
+  pointer-events: none;
+  width: 47.7vw;
+}
+
+.Label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.InputElement {
+  width: 100%;
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  border: 1px solid whitesmoke;
+  background-color: white;
+  font: inherit;
+  padding: 6px 10px;
+}
+
+.InputElement:focus {
+  outline: none;
+  background-color: #ccc;
+}
+
+.Invalid {
+  background-color: #d91e18;
+}
+/*# sourceMappingURL=Input.module.css.map */

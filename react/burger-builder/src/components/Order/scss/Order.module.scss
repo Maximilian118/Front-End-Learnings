@@ -1,0 +1,14 @@
+.Order {
+  color: whitesmoke;
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 0 2px 3px #ccc;
+  padding: 10px 30px;
+  margin: 10px auto;
+  box-sizing: border-box;
+
+  p {
+    text-transform: capitalize;
+  }
+}

@@ -22,7 +22,7 @@ const orderSummary = props => {
       <Link to='/'>
         <Button btnType="Danger" onClick={props.modalClose}>Cancel</Button>
       </Link>
-      <Link to={`/checkout/${ings}`}>
+      <Link to={`/checkout/${ings}/${JSON.stringify(props.totalPrice)}`}>
         <Button btnType="Success">Continue</Button>
       </Link>
     </WithClass>

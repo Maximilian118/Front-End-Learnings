@@ -5,6 +5,12 @@
   color: whitesmoke;
 }
 
+.Summary button {
+  display: block;
+  padding: auto !important;
+  margin: auto !important;
+}
+
 .burger {
   width: 100%;
   margin: auto;
