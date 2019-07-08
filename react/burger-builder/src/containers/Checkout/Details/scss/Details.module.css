@@ -31,4 +31,10 @@
 .Wrapper .Details h3 {
   height: 20px;
 }
+
+@media (max-width: 600px) {
+  .Wrapper .Details {
+    width: 100%;
+  }
+}
 /*# sourceMappingURL=Details.module.css.map */

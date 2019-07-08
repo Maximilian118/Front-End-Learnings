@@ -2,7 +2,7 @@ A collection of files used to facilitate my learning of Front-End languages and 
 
 Need to learn / Goals:
 
-- [ ] React.
+- [X] React.
 - [X] SCSS.
 - [X] Bootstrap.
 - [X] A comprehensive understanding of JS.
@@ -23,11 +23,14 @@ React Learning Points:
 - [X] File Structure & Naming trends.
 - [X] Aux and Fragment containers.
 - [X] Higher order components.
-- [X] Packages such as PropTypes, Axios, React-router-dom.
+- [X] Packages such as PropTypes, Axios.
 - [X] Using a Context API.
 - [X] HTTP requests with lifecycle functions.
 - [X] Single page & Multi page applications. 
 - [X] Code splitting / Lazy loading.
+- [X] Dynamic Forms
+- [X] React Router & React Router Dom
+- [ ] Redux
 
 Bootstrap Learning Points:
 
