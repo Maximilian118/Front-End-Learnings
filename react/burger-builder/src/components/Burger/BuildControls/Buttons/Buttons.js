@@ -1,6 +1,6 @@
-import React from 'react';
-import classes from './scss/Buttons.module.css';
-import WithClass from '../../../../hoc/WithClass';
+import React from 'react'
+import classes from './scss/Buttons.module.css'
+import WithClass from '../../../../hoc/WithClass'
 
 const Buttons = props => (
   <WithClass classes={classes.Buttons}>
@@ -13,6 +13,6 @@ const Buttons = props => (
       onClick={props.added} 
       className={classes.More}>More</button>
   </WithClass>
-);
+)
 
-export default Buttons;
+export default Buttons

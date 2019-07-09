@@ -1,12 +1,12 @@
-import React from 'react';
-import classes from './scss/Modal.module.css';
-import WithClass from '../../../hoc/WithClass';
-import Backdrop from '../Backdrop/Backdrop';
+import React from 'react'
+import classes from './scss/Modal.module.css'
+import WithClass from '../../../hoc/WithClass'
+import Backdrop from '../Backdrop/Backdrop'
 
 const displayModal = props => {
-  let hideModal = classes.hideModal;
+  let hideModal = classes.hideModal
   if (props.show) {
-    hideModal = classes.Modal;
+    hideModal = classes.Modal
   }
 
   return (
@@ -17,6 +17,6 @@ const displayModal = props => {
       </WithClass>
     </>
   )
-};
+}
 
-export default displayModal;
+export default displayModal

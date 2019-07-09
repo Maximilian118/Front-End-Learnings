@@ -1,7 +1,7 @@
-import React from 'react';
-import classes from './scss/Menulink.module.css';
+import React from 'react'
+import classes from './scss/Menulink.module.css'
 
-const Menulink = props => 
+const MenuLink = props => 
   <li className={classes.MenuLink}>
     <a 
       href={props.link}
@@ -10,4 +10,4 @@ const Menulink = props =>
     >{props.children}</a>
   </li>
 
-export default Menulink;
+export default MenuLink

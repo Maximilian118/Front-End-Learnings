@@ -1,9 +1,9 @@
-import React from 'react';
-import classes from './scss/Sidedrawer.module.css';
-import WithClass from '../../../hoc/WithClass';
-import Logo from '../../Logo/Logo';
-import NavItems from '../Navitems/Navitems';
-import Backdrop from '../../UI/Backdrop/Backdrop';
+import React from 'react'
+import classes from './scss/Sidedrawer.module.css'
+import WithClass from '../../../hoc/WithClass'
+import Logo from '../../Logo/Logo'
+import NavItems from '../Navitems/Navitems'
+import Backdrop from '../../UI/Backdrop/Backdrop'
 
 const sideDrawer = props => {
   let openClose = [classes.SideDrawer, classes.Close]
@@ -23,7 +23,7 @@ const sideDrawer = props => {
         </nav>
       </WithClass>
     </>
-  );
-};
+  )
+}
 
-export default sideDrawer;
+export default sideDrawer

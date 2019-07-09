@@ -1,9 +1,9 @@
-import React from 'react';
-import classes from './scss/Toolbar.module.css';
-import WithClass from '../../../hoc/WithClass';
-import Logo from '../../../components/Logo/Logo';
-import NavItems from '../Navitems/Navitems';
-import MenuLink from '../Navitems/Menulink/Menulink';
+import React from 'react'
+import classes from './scss/Toolbar.module.css'
+import WithClass from '../../../hoc/WithClass'
+import Logo from '../../../components/Logo/Logo'
+import NavItems from '../Navitems/Navitems'
+import MenuLink from '../Navitems/Menulink/Menulink'
 
 const toolbar = props => (
   <header className={classes.Toolbar}>
@@ -19,5 +19,5 @@ const toolbar = props => (
       <NavItems />
     </nav>
   </header>
-);
-export default toolbar;
+)
+export default toolbar

@@ -1,29 +1,29 @@
-import React, {useState, useEffect} from 'react';
-import Modal from '../../components/UI/Modal/Modal';
+import React, {useState, useEffect} from 'react'
+import Modal from '../../components/UI/Modal/Modal'
 
 const withErrorhandler = (WrappedComponent, axios) => {
   return props => {
-    const [err, setError] = useState(null);
+    const [err, setError] = useState(null)
 
     const reqInterceptor = axios.interceptors.request.use(req => {
-      setError(null);
-      return req;
-    });
+      setError(null)
+      return req
+    })
     const resInterceptor = axios.interceptors.request.use( res => res, err => {
-      setError(err);
-      return err;
+      setError(err)
+      return err
     })
 
     useEffect(() => {
       return () => {
-        axios.interceptors.request.eject(reqInterceptor);
-        axios.interceptors.response.eject(resInterceptor);
-      };
-    }, [reqInterceptor, resInterceptor]);
+        axios.interceptors.request.eject(reqInterceptor)
+        axios.interceptors.response.eject(resInterceptor)
+      }
+    }, [reqInterceptor, resInterceptor])
  
     const errorConfirmedHandler = () => {
-      setError(null);
-    };
+      setError(null)
+    }
 
     return (
       <>
@@ -32,8 +32,8 @@ const withErrorhandler = (WrappedComponent, axios) => {
         </Modal>
         <WrappedComponent {...props}/>
       </>
-    ); 
-  };
-};
+    ) 
+  }
+}
 
 export default withErrorhandler;

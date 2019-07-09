@@ -1,5 +1,5 @@
-import React from 'react';
-import classes from './scss/Order.module.css';
+import React from 'react'
+import classes from './scss/Order.module.css'
 
 const Order = props => 
   <div className={classes.Order}>
@@ -7,4 +7,4 @@ const Order = props =>
     <p>Price: <strong>£ {props.price}</strong></p>
   </div>
 
-export default Order;
+export default Order

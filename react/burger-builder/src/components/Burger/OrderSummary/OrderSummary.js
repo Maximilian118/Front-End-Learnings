@@ -1,14 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import classes from './scss/OrderSummary.module.css';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import classes from './scss/OrderSummary.module.css'
 import WithClass from '../../../hoc/WithClass'
-import Button from '../../UI/Button/Button';
+import Button from '../../UI/Button/Button'
 
 const orderSummary = props => {
   const ingredientListItems = Object.keys(props.ingredients)
-  .map(key => <li key={key}>{key}: {props.ingredients[key]}</li>);
-
-  let ings = Object.entries(props.ingredients).map(([key, val]) => `${key}=${val}`).join('&');
+  .map(key => <li key={key}>{key}: {props.ingredients[key]}</li>)
 
   return (
     <WithClass classes={classes.OrderSummary}>
@@ -22,11 +20,11 @@ const orderSummary = props => {
       <Link to='/'>
         <Button btnType="Danger" onClick={props.modalClose}>Cancel</Button>
       </Link>
-      <Link to={`/checkout/${ings}/${JSON.stringify(props.totalPrice)}`}>
+      <Link to='/checkout'>
         <Button btnType="Success">Continue</Button>
       </Link>
     </WithClass>
-  );
-};
+  )
+}
 
-export default orderSummary;
+export default orderSummary

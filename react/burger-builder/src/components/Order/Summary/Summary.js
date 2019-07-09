@@ -1,8 +1,9 @@
-import React from 'react';
-import classes from './scss/Summary.module.css';
+import React from 'react'
+import { connect } from 'react-redux'
+import classes from './scss/Summary.module.css'
 
-import Burger from '../../Burger/Burger';
-import Button from '../../UI/Button/Button';
+import Burger from '../../Burger/Burger'
+import Button from '../../UI/Button/Button'
 
 const Summary = props => 
   <div className={classes.Summary}>
@@ -14,4 +15,10 @@ const Summary = props =>
     <Button btnType='Danger' onClick={props.cancelHandler}>Cancel</Button>
   </div>
 
-export default Summary;
+const mapStateToProps = state => {
+  return {
+    ingredients: state.burgerReducer.ingredients 
+  }
+}
+
+export default connect(mapStateToProps)(Summary)

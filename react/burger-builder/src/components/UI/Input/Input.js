@@ -1,11 +1,11 @@
-import React from 'react';
-import classes from './scss/Input.module.css';
+import React from 'react'
+import classes from './scss/Input.module.css'
 
 const Input = props => {
-  let inputElement = null;
+  let inputElement = null
   const inputClasses = [classes.InputElement]
 
-  let invalidMessage = null;
+  let invalidMessage = null
   if (props.invalid && props.validation && props.touched) {
     inputClasses.push(classes.Invalid)
   }
@@ -20,15 +20,15 @@ const Input = props => {
         className={inputClasses.join(' ')} 
         {...props.elementConfig} 
         value={props.value}
-        onChange={props.changed}/>; 
-      break;
+        onChange={props.changed}/> 
+      break
     case ('textarea'): 
       inputElement = <textarea 
         className={inputClasses.join(' ')} 
         {...props.elementConfig} 
         value={props.value}
-        onChange={props.changed}/>; 
-      break;
+        onChange={props.changed}/> 
+      break
     case ('select'): 
       inputElement = <select 
         className={inputClasses.join(' ')} 
@@ -38,14 +38,14 @@ const Input = props => {
         {props.elementConfig.options.map(option => (
           <option key={option.value} value={option.value}>{option.displayValue}</option>
         ))}
-      </select>; 
-      break;
+      </select> 
+      break
     default: 
       inputElement = <input 
         className={inputClasses.join(' ')} 
         {...props.elementConfig} 
         value={props.value}
-        onChange={props.changed}/>;
+        onChange={props.changed}/>
   }
 
   return (
@@ -54,7 +54,7 @@ const Input = props => {
       {inputElement}
       {invalidMessage}
     </div>
-  );
-};
+  )
+}
 
-export default Input;
+export default Input

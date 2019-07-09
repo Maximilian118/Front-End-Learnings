@@ -1,14 +1,14 @@
-import React from 'react';
-import classes from './scss/BuildControls.module.css';
-import WithClass from '../../../hoc/WithClass';
-import Buttons from './Buttons/Buttons';
+import React from 'react'
+import classes from './scss/BuildControls.module.css'
+import WithClass from '../../../hoc/WithClass'
+import Buttons from './Buttons/Buttons'
 
 const controls = [
   {label: 'Salad', type: 'salad'},
   {label: 'Bacon', type: 'bacon'},
   {label: 'Cheese', type: 'cheese'},
   {label: 'Meat', type: 'meat'},
-];
+]
 
 const buildControls = props => (
   <WithClass classes={classes.BuildControls}>
@@ -26,6 +26,6 @@ const buildControls = props => (
       disabled={!props.canPurchase}
       onClick={props.orderClicked}>Order</button>
   </WithClass>
-);
+)
 
-export default buildControls;
+export default buildControls
