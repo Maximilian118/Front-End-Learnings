@@ -134,7 +134,7 @@ const isFormValid = orderForm => {
   return formValidation
 }
 
-const burgerReducer = (state = initialState, action) => {
+const detailsReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionType.DETAILS:
       return {
@@ -145,4 +145,4 @@ const burgerReducer = (state = initialState, action) => {
   }
 }
 
-export default burgerReducer
+export default detailsReducer

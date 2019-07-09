@@ -64,8 +64,8 @@ const mapStateToProps = state => {
   return {
     ingredients: state.burgerReducer.ingredients,
     totalPrice: state.burgerReducer.totalPrice,
-    details: state.details.orderForm,
-    formIsValid: state.details.formIsValid
+    details: state.detailsReducer.orderForm,
+    formIsValid: state.detailsReducer.formIsValid
   }
 }
 

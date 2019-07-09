@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
-import { createStore, combineReducers } from 'redux'
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux'
 import axios from 'axios'
 import './scss/index.module.css'
@@ -13,10 +13,24 @@ import detailsReducer from './store/reducers/detailsReducer'
 
 const rootReducer = combineReducers({
   burgerReducer: burgerReducer,
-  details: detailsReducer
+  detailsReducer: detailsReducer
 })
 
-const store = createStore(rootReducer)
+// Middleware
+const logger = store => {
+  return next => {
+    return action => {
+      console.log('[Middleware] Dispatching...', action)
+      const result = next(action)
+      console.log('[Middleware] Next state...', store.getState())
+      return result
+    }
+  }
+}
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(logger)))
 
 axios.defaults.baseURL = 'https://burger-builder-703cc.firebaseio.com/'
 
