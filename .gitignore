@@ -86,26 +86,26 @@ react/http-ajax/yarn-error.log*
 ########################################## lazy-loading
 
 # dependencies
-react/lazy-loading-react-suspense/node_modules
-react/lazy-loading-react-suspense/.pnp
-react/lazy-loading-react-suspense/.pnp.js
-react/lazy-loading-react-suspense/node_modules
-react/lazy-loading-react-suspense/.pnp
-react/lazy-loading-react-suspense/.pnp.js
+react/lazy-loading-suspense/node_modules
+react/lazy-loading-suspense/.pnp
+react/lazy-loading-suspense/.pnp.js
+react/lazy-loading-suspense/node_modules
+react/lazy-loading-suspense/.pnp
+react/lazy-loading-suspense/.pnp.js
 
 # testing
-react/lazy-loading-react-suspense/coverage
+react/lazy-loading-suspense/coverage
 
 # production
-react/lazy-loading-react-suspense/build
+react/lazy-loading-suspense/build
 
 # misc
-react/lazy-loading-react-suspense/.DS_Store
-react/lazy-loading-react-suspense/.env.local
-react/lazy-loading-react-suspense/.env.development.local
-react/lazy-loading-react-suspense/.env.test.local
-react/lazy-loading-react-suspense/.env.production.local
+react/lazy-loading-suspense/.DS_Store
+react/lazy-loading-suspense/.env.local
+react/lazy-loading-suspense/.env.development.local
+react/lazy-loading-suspense/.env.test.local
+react/lazy-loading-suspense/.env.production.local
 
-react/lazy-loading-react-suspense/npm-debug.log*
-react/lazy-loading-react-suspense/yarn-debug.log*
-react/lazy-loading-react-suspense/yarn-error.log*
+react/lazy-loading-suspense/npm-debug.log*
+react/lazy-loading-suspense/yarn-debug.log*
+react/lazy-loading-suspense/yarn-error.log*

@@ -28,9 +28,9 @@ React Learning Points:
 - [X] HTTP requests with lifecycle functions.
 - [X] Single page & Multi page applications. 
 - [X] Code splitting / Lazy loading.
-- [X] Dynamic Forms
-- [X] React Router & React Router Dom
-- [ ] Redux
+- [X] Dynamic Forms.
+- [X] React-Router & React-Router-Dom.
+- [X] Redux, React-Redux & Redux-Thunk.
 
 Bootstrap Learning Points:
 
