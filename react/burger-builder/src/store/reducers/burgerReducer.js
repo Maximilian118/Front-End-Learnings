@@ -1,4 +1,5 @@
-import * as actionType from '../actions'
+import * as actionType from '../actions/actionTypes'
+import { updateState } from '../utility'
 
 const initialState = {
   ingredients: null,
@@ -13,39 +14,42 @@ const INGREDIENT_PRICES = {
   meat: 1.3
 }
 
-const updatePurchaseState = (ingredients) => {
-  const sum = Object.values(ingredients).reduce((sum, el) => sum + el, 0)
-  return (sum > 0)
+const init = ings => {
+  return {
+    ingredients: ings, 
+    totalPrice: 4,
+    canPurchase: false
+  }
+}
+
+const changeIngs = (ings, totalPrice, action, op) => {
+  const newIngs = {
+    ...ings,
+    [action]: op(ings[action], 1)
+  }
+  const sum = Object.values(newIngs).reduce((sum, el) => sum + el, 0)
+  return {
+    ingredients: newIngs,
+    totalPrice: op(totalPrice, INGREDIENT_PRICES[action]),
+    canPurchase: sum > 0
+  }
+}
+
+const op = {
+  plus : (x, y) => x + y,
+  minus : (x, y) => x - y
 }
 
 const burgerReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionType.INIT:
-      return {
-        ...state,
-        ingredients: {...action.ingredients}
-      }
+      return updateState(state, init(action.ingredients))
     case actionType.ADD:
-      return {
-        ...state,
-        ingredients: {
-          ...state.ingredients,
-          [action.ingredient]: state.ingredients[action.ingredient] + 1
-        },
-        totalPrice: state.totalPrice + INGREDIENT_PRICES[action.ingredient],
-        canPurchase: updatePurchaseState(state.ingredients)
-      }
+      return updateState(state, changeIngs(state.ingredients, state.totalPrice, action.ingredient, op.plus))
     case actionType.REMOVE:
-      return {
-        ...state,
-        ingredients: {
-          ...state.ingredients,
-          [action.ingredient]: state.ingredients[action.ingredient] - 1
-        },
-        totalPrice: state.totalPrice - INGREDIENT_PRICES[action.ingredient],
-        canPurchase: updatePurchaseState(state.ingredients)
-      }
-    default: return state
+      return updateState(state, changeIngs(state.ingredients, state.totalPrice, action.ingredient, op.minus))
+    default:
+      return state
   }
 }
 

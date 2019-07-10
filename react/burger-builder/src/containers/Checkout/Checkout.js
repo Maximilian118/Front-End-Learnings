@@ -1,7 +1,10 @@
 import React from 'react'
+import { Redirect } from 'react-router-dom'
+import { connect } from 'react-redux'
 import Summary from '../../components/Order/Summary/Summary'
 
 const Checkout = props => {
+  console.log(props)
   const cancelHandler = () => {
     props.history.goBack()
   }
@@ -9,14 +12,20 @@ const Checkout = props => {
   const continueHandler = () => {
     props.history.replace('/details')
   }
-
-  return (
-    <>
-      <Summary 
-        cancelHandler={cancelHandler}
-        continueHandler={continueHandler}/>
-    </>
-  )
+  
+  let summary = <Redirect to='/' />
+  if (props.ingredients) {
+    return <Summary 
+      cancelHandler={cancelHandler}
+      continueHandler={continueHandler}/>
+  }
+  return summary
 }
 
-export default Checkout
+const mapStateToProps = state => {
+  return {
+    ingredients: state.burgerReducer.ingredients
+  }
+}
+
+export default connect(mapStateToProps)(Checkout)

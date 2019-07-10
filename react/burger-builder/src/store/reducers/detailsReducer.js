@@ -1,7 +1,10 @@
-import * as actionType from '../actions'
+import * as actionType from '../actions/actionTypes'
+import { updateState } from '../utility'
 
 const initialState = {
+  orders: [],
   formIsValid: false,
+  loading: false,
   orderForm: {
     name: {
       elementType: 'input',
@@ -15,7 +18,7 @@ const initialState = {
       },
       valid: false,
       invalidMessage: 'Please enter your name.',
-      touched: false,
+      touched: false
     },
     email: {
       elementType: 'input',
@@ -29,7 +32,7 @@ const initialState = {
       },
       valid: false,
       invalidMessage: 'Please enter your Email.',
-      touched: false,
+      touched: false
     },
     street: {
       elementType: 'input',
@@ -43,7 +46,7 @@ const initialState = {
       },
       valid: false,
       invalidMessage: 'Please enter the first line of your address.',
-      touched: false,
+      touched: false
     },
     postcode: {
       elementType: 'input',
@@ -59,7 +62,7 @@ const initialState = {
       },
       valid: false,
       invalidMessage: 'Please enter your post code.',
-      touched: false,
+      touched: false
     },
     country: {
       elementType: 'input',
@@ -73,22 +76,22 @@ const initialState = {
       },
       valid: false,
       invalidMessage: 'Please enter your country.',
-      touched: false,
+      touched: false
     },
     deliveryMethod: {
       elementType: 'select',
       elementConfig: {
         options: [
-          {value: '3 Minuets!', displayValue: '3 Minuets!'},
-          {value: '1 Hour', displayValue: '1 Hour'},
-          {value: '4 Hours', displayValue: '4 Hours'},
-          {value: 'Sometime Today', displayValue: 'Sometime Today'},
-          {value: 'By Ferry', displayValue: 'By Ferry'}
+          { value: '3 Minuets!', displayValue: '3 Minuets!' }, 
+          { value: '1 Hour', displayValue: '1 Hour' }, 
+          { value: '4 Hours', displayValue: '4 Hours' }, 
+          { value: 'Sometime Today', displayValue: 'Sometime Today' }, 
+          { value: 'By Ferry', displayValue: 'By Ferry' }
         ]
       },
       value: '3 Minuets!',
       validation: {},
-      valid: true,
+      valid: true
     },
     Comments: {
       elementType: 'textarea',
@@ -98,27 +101,28 @@ const initialState = {
       },
       value: '',
       validation: {},
-      valid: true,
-    },
+      valid: true
+    }
   }
 }
 
 const isValid = (val, rules) => {
   let valid = true
-    if (rules.required) {
-      valid = val.trim() !== '' && valid // trim = doesn't become true with whitespace.
-    }
-    if (rules.minLength) {
-      valid = val.length >= rules.minLength && valid
-    }
-    if (rules.maxLength) {
-      valid = val.length <= rules.maxLength && valid
-    }
+  if (rules.required) {
+    valid = val.trim() !== '' && valid // trim = doesn't become true with whitespace.
+  }
+  if (rules.minLength) {
+    valid = val.length >= rules.minLength && valid
+  }
+  if (rules.maxLength) {
+    valid = val.length <= rules.maxLength && valid
+  }
   return valid
 }
 
 const inputChangedHandler = (orderForm, event, ident) => {
-  const order = {...orderForm}
+  const order = { ...orderForm }
+  event.persist()
   order[ident].value = event.target.value
   order[ident].valid = isValid(order[ident].value, order[ident].validation)
   order[ident].touched = true
@@ -134,14 +138,45 @@ const isFormValid = orderForm => {
   return formValidation
 }
 
+const postSuccess = (orderArr, id, order) => {
+  const newOrder = {
+    id: id,
+    ...order
+  }
+  return {
+    orders: orderArr.concat(newOrder),
+    loading: false
+  }
+}
+
+const getSuccess = orders => {
+  return {
+    orders: orders,
+    loading: false
+  }
+}
+
+const details = (form, event, ident) => {
+  return {
+    formIsValid: isFormValid(form),
+    orderForm: inputChangedHandler(form, event, ident)
+  }
+}
+
 const detailsReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionType.DETAILS:
-      return {
-        formIsValid: isFormValid(state.orderForm),
-        orderForm: inputChangedHandler(state.orderForm, action.event, action.ident)
-      }
-    default: return state
+      return updateState(state, details(state.orderForm, action.event, action.ident))
+    case actionType.POST_SUCCESS:
+      return updateState(state, postSuccess(state.orders, action.id, action.order))
+    case actionType.LOADING_TRUE:
+      return updateState(state, {loading: true})
+    case actionType.GET_ORDERS_SUCCESS:
+      return updateState(state, getSuccess(action.orders))
+    case actionType.REQUEST_FAIL:
+      return updateState(state, {loading: false})
+    default:
+      return state
   }
 }
 
