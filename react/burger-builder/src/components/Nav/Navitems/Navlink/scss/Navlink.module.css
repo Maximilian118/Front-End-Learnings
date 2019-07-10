@@ -37,6 +37,7 @@
             box-sizing: border-box;
     display: block;
     width: 100%;
+    border: none;
   }
   .NavLink a {
     color: #8F5C2C;

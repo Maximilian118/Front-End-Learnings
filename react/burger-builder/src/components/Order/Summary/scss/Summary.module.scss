@@ -1,8 +1,11 @@
 .Summary {
+  display: flex;
+  flex-flow: column;
   text-align: center;
+  margin: 20px auto;
   width: 80%;
-  margin: auto;
   color: whitesmoke;
+  height: 90%;
 
   button {
     display: block;

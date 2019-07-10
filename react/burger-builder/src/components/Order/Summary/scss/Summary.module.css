@@ -1,8 +1,16 @@
 .Summary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
   text-align: center;
+  margin: 20px auto;
   width: 80%;
-  margin: auto;
   color: whitesmoke;
+  height: 90%;
 }
 
 .Summary button {

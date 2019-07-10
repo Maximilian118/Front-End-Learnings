@@ -165,18 +165,12 @@ const details = (form, event, ident) => {
 
 const detailsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionType.DETAILS:
-      return updateState(state, details(state.orderForm, action.event, action.ident))
-    case actionType.POST_SUCCESS:
-      return updateState(state, postSuccess(state.orders, action.id, action.order))
-    case actionType.LOADING_TRUE:
-      return updateState(state, {loading: true})
-    case actionType.GET_ORDERS_SUCCESS:
-      return updateState(state, getSuccess(action.orders))
-    case actionType.REQUEST_FAIL:
-      return updateState(state, {loading: false})
-    default:
-      return state
+    case actionType.DETAILS: return updateState(state, details(state.orderForm, action.event, action.ident))
+    case actionType.POST_SUCCESS: return updateState(state, postSuccess(state.orders, action.id, action.order))
+    case actionType.LOADING_TRUE: return updateState(state, {loading: true})
+    case actionType.GET_ORDERS_SUCCESS: return updateState(state, getSuccess(action.orders))
+    case actionType.REQUEST_FAIL: return updateState(state, {loading: false})
+    default: return state
   }
 }
 

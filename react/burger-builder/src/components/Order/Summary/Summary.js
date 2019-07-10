@@ -11,8 +11,10 @@ const Summary = props =>
     <div className={classes.burger}>
       <Burger ingredients={props.ingredients}/>
     </div>
-    <Button btnType='Success' onClick={props.continueHandler}>Continue to Checkout!</Button>
-    <Button btnType='Danger' onClick={props.cancelHandler}>Cancel</Button>
+    <div>
+      <Button btnType='Success' onClick={props.continueHandler}>Continue to Checkout!</Button>
+      <Button btnType='Danger' onClick={props.cancelHandler}>Cancel</Button>
+    </div>
   </div>
 
 const mapStateToProps = state => {

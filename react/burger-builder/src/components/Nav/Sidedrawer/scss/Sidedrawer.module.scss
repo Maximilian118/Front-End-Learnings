@@ -7,8 +7,17 @@
   top: 0;
   z-index: 200;
   background-color: whitesmoke;
-  padding: 32px 16px;
+  padding: 32px 0;
   box-sizing: border-box;
+
+  li {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    background: #CACACA;
+    padding-left: 10px;
+    font-weight: bold;
+  }
 }
 
 .Open {

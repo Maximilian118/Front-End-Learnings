@@ -42,14 +42,10 @@ const op = {
 
 const burgerReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionType.INIT:
-      return updateState(state, init(action.ingredients))
-    case actionType.ADD:
-      return updateState(state, changeIngs(state.ingredients, state.totalPrice, action.ingredient, op.plus))
-    case actionType.REMOVE:
-      return updateState(state, changeIngs(state.ingredients, state.totalPrice, action.ingredient, op.minus))
-    default:
-      return state
+    case actionType.INIT: return updateState(state, init(action.ingredients))
+    case actionType.ADD: return updateState(state, changeIngs(state.ingredients, state.totalPrice, action.ingredient, op.plus))
+    case actionType.REMOVE: return updateState(state, changeIngs(state.ingredients, state.totalPrice, action.ingredient, op.minus))
+    default: return state
   }
 }
 

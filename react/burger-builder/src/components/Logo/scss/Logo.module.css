@@ -5,6 +5,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 5px;
+  text-align: center;
 }
 
 .Logo img {
