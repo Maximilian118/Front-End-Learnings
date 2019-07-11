@@ -52,7 +52,9 @@ const Input = props => {
     <div className={classes.Input}>
       <label className={classes.Label}>{props.label}</label>
       {inputElement}
-      {invalidMessage}
+      <div className={classes.InvalidMessage}>
+        {invalidMessage}
+      </div>
     </div>
   )
 }

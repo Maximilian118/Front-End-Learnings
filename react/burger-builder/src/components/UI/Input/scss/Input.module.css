@@ -5,12 +5,17 @@
           box-sizing: border-box;
 }
 
-.Input p {
-  position: absolute;
+.Input .InvalidMessage {
+  left: 0;
+  width: 100%;
+  position: fixed;
   -webkit-transform: translate(0, -45px);
           transform: translate(0, -45px);
   pointer-events: none;
-  width: 47.7vw;
+}
+
+.Input .InvalidMessage p {
+  opacity: 0.7;
 }
 
 .Label {

@@ -28,10 +28,10 @@ const initialState = {
       },
       value: '',
       validation: {
-        required: true
+        emailRequired: true
       },
       valid: false,
-      invalidMessage: 'Please enter your Email.',
+      invalidMessage: 'Please enter a valid Email.',
       touched: false
     },
     street: {
@@ -56,12 +56,10 @@ const initialState = {
       },
       value: '',
       validation: {
-        required: true,
-        minLength: 6,
-        maxLength: 7
+        postCodeRequired: true
       },
       valid: false,
-      invalidMessage: 'Please enter your post code.',
+      invalidMessage: 'Please enter a valid post code.',
       touched: false
     },
     country: {
@@ -106,16 +104,16 @@ const initialState = {
   }
 }
 
-const isValid = (val, rules) => {
+const isValid = (val, rules, event) => {
   let valid = true
+  if (rules.emailRequired) {
+    valid = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(event) && valid
+  }
+  if (rules.postCodeRequired) {
+    valid = /\b((?:(?:gir)|(?:[a-pr-uwyz])(?:(?:[0-9](?:[a-hjkpstuw]|[0-9])?)|(?:[a-hk-y][0-9](?:[0-9]|[abehmnprv-y])?)))) ?([0-9][abd-hjlnp-uw-z]{2})\b/ig.test(event) && valid
+  }
   if (rules.required) {
     valid = val.trim() !== '' && valid // trim = doesn't become true with whitespace.
-  }
-  if (rules.minLength) {
-    valid = val.length >= rules.minLength && valid
-  }
-  if (rules.maxLength) {
-    valid = val.length <= rules.maxLength && valid
   }
   return valid
 }
@@ -124,7 +122,7 @@ const inputChangedHandler = (orderForm, event, ident) => {
   const order = { ...orderForm }
   event.persist()
   order[ident].value = event.target.value
-  order[ident].valid = isValid(order[ident].value, order[ident].validation)
+  order[ident].valid = isValid(order[ident].value, order[ident].validation, event.target.value)
   order[ident].touched = true
 
   return order

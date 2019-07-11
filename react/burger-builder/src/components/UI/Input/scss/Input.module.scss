@@ -3,11 +3,16 @@
   padding: 10px;
   box-sizing: border-box;
 
-  p {
-    position: absolute;
+  .InvalidMessage {
+    left: 0;
+    width: 100%;
+    position: fixed;
     transform: translate(0, -45px);
     pointer-events: none;
-    width: 47.7vw;
+
+    p {
+      opacity: 0.7;
+    }
   }
 }
 
