@@ -1,9 +1,11 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import classes from './scss/Sidedrawer.module.css'
 import WithClass from '../../../hoc/WithClass'
 import Logo from '../../Logo/Logo'
 import NavItems from '../Navitems/Navitems'
 import Backdrop from '../../UI/Backdrop/Backdrop'
+import NavLink from '../Navitems/Navlink/Navlink'
 
 const sideDrawer = props => {
   let openClose = [classes.SideDrawer, classes.Close]
@@ -19,11 +21,18 @@ const sideDrawer = props => {
           <Logo />
         </WithClass>
         <nav>
-          <NavItems />
+          {props.userEmail ? <div className={classes.Username}><NavLink link=''>{props.userEmail}</NavLink></div> : null}
+          <NavItems clicked={props.closed}/>
         </nav>
       </WithClass>
     </>
   )
 }
 
-export default sideDrawer
+const mapStateToProps = state => {
+  return {
+    userEmail: state.authReducer.userEmail
+  }
+}
+
+export default connect(mapStateToProps)(sideDrawer)

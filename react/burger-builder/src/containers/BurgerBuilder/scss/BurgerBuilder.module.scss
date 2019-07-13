@@ -8,3 +8,13 @@
 .err {
   color: whitesmoke;
 }
+
+.MovePopUp {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  transform: translate(0, -250px)
+}

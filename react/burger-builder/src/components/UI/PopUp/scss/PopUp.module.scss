@@ -1,0 +1,23 @@
+.PopUp {
+  position: fixed;
+  margin: 750px auto;
+  width: 500px;
+  text-align: center;
+  padding: 10px;
+  background: #646464;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: whitesmoke;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .PopUp {
+    margin: 595px auto;
+    width: 100%;
+    border-radius: 0px;
+  }
+}

@@ -14,9 +14,14 @@ const INGREDIENT_PRICES = {
   meat: 1.3
 }
 
-const init = ings => {
+const init = () => {
   return {
-    ingredients: ings, 
+    ingredients: {
+      salad: 0,
+      bacon: 0,
+      cheese: 0,
+      meat: 0
+    }, 
     totalPrice: 4,
     canPurchase: false
   }
@@ -31,7 +36,7 @@ const changeIngs = (ings, totalPrice, action, op) => {
   return {
     ingredients: newIngs,
     totalPrice: op(totalPrice, INGREDIENT_PRICES[action]),
-    canPurchase: sum > 0
+    canPurchase: sum > 0,
   }
 }
 
@@ -42,9 +47,10 @@ const op = {
 
 const burgerReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionType.INIT: return updateState(state, init(action.ingredients))
+    case actionType.INIT: return updateState(state, init())
     case actionType.ADD: return updateState(state, changeIngs(state.ingredients, state.totalPrice, action.ingredient, op.plus))
     case actionType.REMOVE: return updateState(state, changeIngs(state.ingredients, state.totalPrice, action.ingredient, op.minus))
+    case actionType.POST_SUCCESS: return updateState(state, init())
     default: return state
   }
 }

@@ -1,23 +1,29 @@
 .Button {
-  background-color: transparent;
-  border: none;
-  color: white;
-  outline: none;
+  display: block;
   cursor: pointer;
-  font: inherit;
-  padding: 10px;
-  margin: 10px;
-  font-weight: bold;
+  border: 1px solid black;
+  color: #966909;
+  font-family: inherit;
   font-size: 1.2em;
+  padding: 5px;
+  width: 250px;
+  margin: 15px auto 0px;
 
-  &:first-of-type {
-    margin-left: 0;
-    padding-left: 0;
+  &:hover, &:active {
+    color: white;
+    background-color: #5C9210;
+    border: 1px solid #5C9210;
   }
 
   &:disabled {
+    background-color: #C7C6C6;
     cursor: not-allowed;
-    color: #ccc;
+    border: 1px solid #ccc;
+    color: #888888;
+  }
+
+  &:not(:disabled) {
+    animation: enable 0.3s linear;
   }
 }
 
@@ -26,5 +32,10 @@
 }
 
 .Danger {
-  color: #944317;
+  color: #f22613;
+
+  &:hover {
+    background: #f22613;
+    border: 1px solid #f22613;
+  }
 }

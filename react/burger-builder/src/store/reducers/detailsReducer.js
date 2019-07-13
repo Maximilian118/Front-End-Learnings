@@ -1,10 +1,11 @@
 import * as actionType from '../actions/actionTypes'
-import { updateState } from '../utility'
+import { updateState, detailsForm } from '../utility'
 
 const initialState = {
   orders: [],
   formIsValid: false,
   loading: false,
+  popUp: null,
   orderForm: {
     name: {
       elementType: 'input',
@@ -28,10 +29,12 @@ const initialState = {
       },
       value: '',
       validation: {
+        required: true,
         emailRequired: true
       },
       valid: false,
       invalidMessage: 'Please enter a valid Email.',
+      invalidPopUp: 'Email must be a in a valid Email address format',
       touched: false
     },
     street: {
@@ -56,10 +59,12 @@ const initialState = {
       },
       value: '',
       validation: {
+        required: true,
         postCodeRequired: true
       },
       valid: false,
       invalidMessage: 'Please enter a valid post code.',
+      invalidPopUp: 'Please enter a valid 6 or 7 digit post code',
       touched: false
     },
     country: {
@@ -104,36 +109,11 @@ const initialState = {
   }
 }
 
-const isValid = (val, rules, event) => {
-  let valid = true
-  if (rules.emailRequired) {
-    valid = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(event) && valid
+const getSuccess = orders => {
+  return {
+    orders: orders,
+    loading: false
   }
-  if (rules.postCodeRequired) {
-    valid = /\b((?:(?:gir)|(?:[a-pr-uwyz])(?:(?:[0-9](?:[a-hjkpstuw]|[0-9])?)|(?:[a-hk-y][0-9](?:[0-9]|[abehmnprv-y])?)))) ?([0-9][abd-hjlnp-uw-z]{2})\b/ig.test(event) && valid
-  }
-  if (rules.required) {
-    valid = val.trim() !== '' && valid // trim = doesn't become true with whitespace.
-  }
-  return valid
-}
-
-const inputChangedHandler = (orderForm, event, ident) => {
-  const order = { ...orderForm }
-  event.persist()
-  order[ident].value = event.target.value
-  order[ident].valid = isValid(order[ident].value, order[ident].validation, event.target.value)
-  order[ident].touched = true
-
-  return order
-}
-
-const isFormValid = orderForm => {
-  let formValidation = true
-  for (let i in orderForm) {
-    formValidation = orderForm[i].valid && formValidation
-  }
-  return formValidation
 }
 
 const postSuccess = (orderArr, id, order) => {
@@ -143,31 +123,26 @@ const postSuccess = (orderArr, id, order) => {
   }
   return {
     orders: orderArr.concat(newOrder),
-    loading: false
+    loading: false,
+    popUp: 'Order Placed!'
   }
 }
 
-const getSuccess = orders => {
+const postFail = () => {
   return {
-    orders: orders,
-    loading: false
-  }
-}
-
-const details = (form, event, ident) => {
-  return {
-    formIsValid: isFormValid(form),
-    orderForm: inputChangedHandler(form, event, ident)
+    loading: false, 
+    popUp: 'Order Failed. Are you logged in?'
   }
 }
 
 const detailsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionType.DETAILS: return updateState(state, details(state.orderForm, action.event, action.ident))
+    case actionType.DETAILS: return updateState(state, detailsForm(state.orderForm, action.event, action.ident, state))
     case actionType.POST_SUCCESS: return updateState(state, postSuccess(state.orders, action.id, action.order))
     case actionType.LOADING_TRUE: return updateState(state, {loading: true})
     case actionType.GET_ORDERS_SUCCESS: return updateState(state, getSuccess(action.orders))
-    case actionType.REQUEST_FAIL: return updateState(state, {loading: false})
+    case actionType.REQUEST_FAIL: return updateState(state, postFail())
+    case actionType.POP_UP_TIMEOUT: return updateState(state, {popUp: null})
     default: return state
   }
 }

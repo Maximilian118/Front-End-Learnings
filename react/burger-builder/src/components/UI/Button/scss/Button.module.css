@@ -1,24 +1,31 @@
 .Button {
-  background-color: transparent;
-  border: none;
-  color: white;
-  outline: none;
+  display: block;
   cursor: pointer;
-  font: inherit;
-  padding: 10px;
-  margin: 10px;
-  font-weight: bold;
+  border: 1px solid black;
+  color: #966909;
+  font-family: inherit;
   font-size: 1.2em;
+  padding: 5px;
+  width: 250px;
+  margin: 15px auto 0px;
 }
 
-.Button:first-of-type {
-  margin-left: 0;
-  padding-left: 0;
+.Button:hover, .Button:active {
+  color: white;
+  background-color: #5C9210;
+  border: 1px solid #5C9210;
 }
 
 .Button:disabled {
+  background-color: #C7C6C6;
   cursor: not-allowed;
-  color: #ccc;
+  border: 1px solid #ccc;
+  color: #888888;
+}
+
+.Button:not(:disabled) {
+  -webkit-animation: enable 0.3s linear;
+          animation: enable 0.3s linear;
 }
 
 .Success {
@@ -26,6 +33,11 @@
 }
 
 .Danger {
-  color: #944317;
+  color: #f22613;
+}
+
+.Danger:hover {
+  background: #f22613;
+  border: 1px solid #f22613;
 }
 /*# sourceMappingURL=Button.module.css.map */

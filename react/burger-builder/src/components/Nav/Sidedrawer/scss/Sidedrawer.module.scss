@@ -35,6 +35,14 @@
   margin-bottom: 32px;
 }
 
+.Username {
+  li {
+    a {
+      color: black;
+    }
+  }
+}
+
 @media (min-width: 500px) {
   .SideDrawer {
     display: none;

@@ -1,39 +1,45 @@
-import React, {useState, useEffect} from 'react'
-import Modal from '../../components/UI/Modal/Modal'
+import React, { Component } from 'react';
 
-const withErrorhandler = (WrappedComponent, axios) => {
-  return props => {
-    const [err, setError] = useState(null)
+import Modal from '../../components/UI/Modal/Modal';
 
-    const reqInterceptor = axios.interceptors.request.use(req => {
-      setError(null)
-      return req
-    })
-    const resInterceptor = axios.interceptors.request.use( res => res, err => {
-      setError(err)
-      return err
-    })
-
-    useEffect(() => {
-      return () => {
-        axios.interceptors.request.eject(reqInterceptor)
-        axios.interceptors.response.eject(resInterceptor)
-      }
-    }, [reqInterceptor, resInterceptor])
- 
-    const errorConfirmedHandler = () => {
-      setError(null)
+const withErrorHandler = ( WrappedComponent, axios ) => {
+  return class extends Component {
+    state = {
+        error: null
     }
 
-    return (
-      <>
-        <Modal show={err} modalClosed={errorConfirmedHandler}>
-          {err ? err.message : null}
-        </Modal>
-        <WrappedComponent {...props}/>
-      </>
-    ) 
+    componentWillMount () {
+      this.reqInterceptor = axios.interceptors.request.use( req => {
+        this.setState( { error: null } );
+        return req;
+      } );
+      this.resInterceptor = axios.interceptors.response.use( res => res, error => {
+        this.setState( { error: error } );
+      } );
+    }
+
+    componentWillUnmount () {
+      axios.interceptors.request.eject( this.reqInterceptor );
+      axios.interceptors.response.eject( this.resInterceptor );
+    }
+
+    errorConfirmedHandler = () => {
+      this.setState( { error: null } );
+    }
+
+    render () {
+      return (
+        <>
+          <Modal
+            show={this.state.error}
+            modalClosed={this.errorConfirmedHandler}>
+            {this.state.error ? this.state.error.message : null}
+          </Modal>
+          <WrappedComponent {...this.props} />
+        </>
+      );
+    }
   }
 }
 
-export default withErrorhandler;
+export default withErrorHandler;

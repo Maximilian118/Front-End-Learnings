@@ -1,23 +1,33 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import classes from './scss/Toolbar.module.css'
 import WithClass from '../../../hoc/WithClass'
 import Logo from '../../../components/Logo/Logo'
 import NavItems from '../Navitems/Navitems'
 import MenuLink from '../Navitems/Menulink/Menulink'
+import NavLink from '../Navitems/Navlink/Navlink'
 
-const toolbar = props => (
+const Toolbar = props => (
   <header className={classes.Toolbar}>
     <WithClass classes={classes.Flex}>
       <WithClass classes={classes.Logo}>
         <Logo />
       </WithClass>
-      <WithClass classes={classes.MenuLinkHide}>
-        <MenuLink click={props.open}>Menu</MenuLink>
-      </WithClass>
+      {props.userEmail ? <div className={classes.Username}><NavLink link='/auth'>{props.userEmail}</NavLink></div> : null}
     </WithClass>
     <nav className={classes.Desktop}>
       <NavItems />
     </nav>
+    <WithClass classes={classes.MenuLinkHide}>
+      <MenuLink click={props.open}>Menu</MenuLink>
+    </WithClass>
   </header>
 )
-export default toolbar
+
+const mapStateToProps = state => {
+  return {
+    userEmail: state.authReducer.userEmail
+  }
+}
+
+export default connect(mapStateToProps)(Toolbar)

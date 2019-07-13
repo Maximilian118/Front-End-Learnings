@@ -15,4 +15,19 @@
 .err {
   color: whitesmoke;
 }
+
+.MovePopUp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  -webkit-transform: translate(0, -250px);
+          transform: translate(0, -250px);
+}
 /*# sourceMappingURL=BurgerBuilder.module.css.map */

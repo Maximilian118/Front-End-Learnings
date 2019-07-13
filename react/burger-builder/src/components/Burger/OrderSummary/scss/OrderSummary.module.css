@@ -11,8 +11,7 @@
   text-align: left;
 }
 
-.OrderSummary button {
-  -webkit-transform: translate(15px);
-          transform: translate(15px);
+.OrderSummary a {
+  text-decoration: none;
 }
 /*# sourceMappingURL=OrderSummary.module.css.map */

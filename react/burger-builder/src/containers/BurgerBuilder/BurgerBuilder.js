@@ -5,6 +5,7 @@ import classes from './scss/BurgerBuilder.module.css'
 // UI
 import Modal from '../../components/UI/Modal/Modal'
 import Spinner from '../../components/UI/Spinner/Spinner'
+import PopUp from '../../components/UI/PopUp/PopUp'
 // Higher Order Components
 import WithClass from '../../hoc/WithClass'
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorhandler'
@@ -17,8 +18,15 @@ import * as actionCreators from '../../store/actions/actionCreators'
 
 const BurgerBuilder = props => {
   const [review, setReview] = useState(false)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => { props.onInitIngredients() }, [])
+
+  useEffect(() => {
+    props.onSetRedirect('/')
+    if (!props.token) {props.onInitIngredients()}
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+
+  if (props.popUp) {
+    setTimeout(() => props.onPopUp(), 2000)
+  }
 
   const reviewHandler = () => {
     setReview(true)
@@ -60,6 +68,10 @@ const BurgerBuilder = props => {
 
   return (
     <>
+      {props.popUp ? 
+      <div className={classes.MovePopUp}>
+        <PopUp message={props.popUp}/>
+      </div> : null}
       <Modal show={review} modalClose={closeReviewHandler}>
         {orderSummary}
       </Modal>
@@ -73,7 +85,9 @@ const mapStateToProps = state => {
     ingredients: state.burgerReducer.ingredients,
     totalPrice: state.burgerReducer.totalPrice,
     canPurchase: state.burgerReducer.canPurchase,
-    error: state.burgerReducer.error
+    error: state.burgerReducer.error,
+    popUp: state.detailsReducer.popUp,
+    token: state.authReducer.token
   }
 }
 
@@ -81,7 +95,9 @@ const mapDispatchToProps = dispatch => {
   return {
     onInitIngredients: () => dispatch(actionCreators.init()),
     onIngredientAdded: ingredient => dispatch(actionCreators.add(ingredient)),
-    onIngredientRemoved: ingredient => dispatch(actionCreators.remove(ingredient))
+    onIngredientRemoved: ingredient => dispatch(actionCreators.remove(ingredient)),
+    onPopUp: () => dispatch(actionCreators.popUpTimeout()),
+    onSetRedirect: path => dispatch(actionCreators.setRedirect(path))
   }
 }
 // prettier-ignore

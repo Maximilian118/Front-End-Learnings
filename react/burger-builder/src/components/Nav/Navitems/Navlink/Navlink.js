@@ -4,7 +4,7 @@ import classes from './scss/Navlink.module.css'
 
 const navLink = props => 
   <li className={classes.NavLink}>
-    <NavLink to={props.link} activeClassName={classes.active}>{props.children}</NavLink>
+    <NavLink to={props.link} activeClassName={classes.active} onClick={props.onClick}>{props.children}</NavLink>
   </li>
 
 export default navLink

@@ -13,10 +13,8 @@
   height: 90%;
 }
 
-.Summary button {
-  display: block;
-  padding: auto !important;
-  margin: auto !important;
+.Summary a {
+  text-decoration: none;
 }
 
 .burger {

@@ -11,10 +11,12 @@ import * as serviceWorker from './serviceWorker'
 import App from './containers/App'
 import burgerReducer from './store/reducers/burgerReducer'
 import detailsReducer from './store/reducers/detailsReducer'
+import authReducer from './store/reducers/authReducer'
 
 const rootReducer = combineReducers({
   burgerReducer: burgerReducer,
-  detailsReducer: detailsReducer
+  detailsReducer: detailsReducer,
+  authReducer: authReducer
 })
 
 // Middleware

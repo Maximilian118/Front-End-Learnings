@@ -6,8 +6,8 @@
   align-items: center;
   justify-content: flex-start;
 
-  .Details {
-    margin: 75px auto;
+  .Auth {
+    margin: 200px auto;
     width: 500px;
     text-align: center;
     padding: 10px;
@@ -24,17 +24,13 @@
 
 @media (max-width: 600px) {
   .Wrapper {
-    .Details {
-      margin: 0px auto;
-      border-radius: 0px;
+    .Auth {
+      margin: 100px auto;
       width: 100%;
+      border-radius: 0px;
 
       h3 {
         margin: 10px;
-      }
-
-      .Header {
-        display: none;
       }
     }
   }

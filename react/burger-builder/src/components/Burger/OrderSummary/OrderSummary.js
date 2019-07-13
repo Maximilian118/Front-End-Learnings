@@ -16,7 +16,6 @@ const orderSummary = props => {
         {ingredientListItems}
       </ul>
       <p><strong>Total Price: £{props.totalPrice.toFixed(2)}</strong></p>
-      <p><strong>Checkout?</strong></p>
       <Link to='/'>
         <Button btnType="Danger" onClick={props.modalClose}>Cancel</Button>
       </Link>

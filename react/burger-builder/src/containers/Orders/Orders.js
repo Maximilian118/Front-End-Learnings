@@ -10,7 +10,7 @@ import * as actionCreator from '../../store/actions/actionCreators'
 
 const Orders = props => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => { props.onGetOrders() }, [])
+  useEffect(() => { props.onGetOrders(props.token, props.userId) }, [])
 
   return props.loading ? <Spinner /> :
     <div className={classes.Orders}>
@@ -24,13 +24,15 @@ const Orders = props => {
 const mapStateToProps = state => {
   return {
     orders: state.detailsReducer.orders,
-    loading: state.detailsReducer.loading
+    loading: state.detailsReducer.loading,
+    token: state.authReducer.token,
+    userId: state.authReducer.userId
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    onGetOrders: () => dispatch(actionCreator.getOrders())
+    onGetOrders: (token, userId) => dispatch(actionCreator.getOrders(token, userId))
   }
 }
 

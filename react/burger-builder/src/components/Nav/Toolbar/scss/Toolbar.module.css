@@ -42,9 +42,30 @@
           align-items: center;
 }
 
+.Flex .Username li {
+  cursor: default;
+}
+
+.Flex .Username li:hover {
+  background-color: none;
+  border-bottom: 0px solid #40A4C8;
+  color: white;
+}
+
+.Flex .Username li a {
+  cursor: default;
+  display: fixed;
+}
+
 .MenuLinkHide {
   display: none;
   height: 100%;
+}
+
+@media (max-width: 650px) {
+  .Username {
+    display: none;
+  }
 }
 
 @media (max-width: 499px) {

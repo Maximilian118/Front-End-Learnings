@@ -27,11 +27,32 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  .Username {
+    li {
+      cursor: default;
+      &:hover {
+        background-color: none;
+        border-bottom: 0px solid #40A4C8;
+        color: white;
+      }
+      a {
+        cursor: default;
+        display: fixed;
+      }
+    }
+  }
 }
 
 .MenuLinkHide {
   display: none;
   height: 100%;
+}
+
+@media (max-width: 650px) {
+  .Username {
+    display: none;
+  }
 }
 
 @media (max-width: 499px) {

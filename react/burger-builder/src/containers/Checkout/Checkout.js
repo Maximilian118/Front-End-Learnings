@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import Summary from '../../components/Order/Summary/Summary'
 
 const Checkout = props => {
-  console.log(props)
   const cancelHandler = () => {
     props.history.goBack()
   }
