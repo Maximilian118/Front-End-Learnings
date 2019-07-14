@@ -1,7 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import axios from 'axios'
-import withErrorHandler from '../../../hoc/withErrorHandler/withErrorhandler'
 import classes from './scss/Details.module.css'
 import Button from '../../../components/UI/Button/Button'
 import Spinner from '../../../components/UI/Spinner/Spinner'
@@ -71,4 +69,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(Details, axios))
+export default connect(mapStateToProps, mapDispatchToProps)(Details)
