@@ -16,7 +16,7 @@ import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary'
 // Action Functions
 import * as actionCreators from '../../store/actions/actionCreators'
 
-const BurgerBuilder = props => {
+export const BurgerBuilder = props => {
   const [review, setReview] = useState(false)
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const BurgerBuilder = props => {
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   if (props.popUp) {
-    setTimeout(() => props.onPopUp(), 2000)
+    setTimeout(() => props.onPopUpTimeout(), 2000)
   }
 
   const reviewHandler = () => {
@@ -43,11 +43,9 @@ const BurgerBuilder = props => {
     disable[key] = disable[key] <= 0
   }
 
-  let orderSummary = null
   let burger = props.error ? <p className={classes.err}>Ingredients can't load!</p> : <Spinner />
-
   if (props.ingredients) {
-    burger = (
+    burger =
       <>
         <Burger ingredients={props.ingredients} />
         <BuildControls 
@@ -58,12 +56,6 @@ const BurgerBuilder = props => {
           lessDisabled={disable} 
           orderClicked={reviewHandler} />
       </>
-    )
-    orderSummary = 
-      <OrderSummary 
-        ingredients={props.ingredients} 
-        modalClose={closeReviewHandler} 
-        totalPrice={props.totalPrice} />
   }
 
   return (
@@ -73,7 +65,10 @@ const BurgerBuilder = props => {
         <PopUp message={props.popUp}/>
       </div> : null}
       <Modal show={review} modalClose={closeReviewHandler}>
-        {orderSummary}
+        {props.ingredients ? <OrderSummary 
+          ingredients={props.ingredients} 
+          modalClose={closeReviewHandler} 
+          totalPrice={props.totalPrice} /> : null}
       </Modal>
       <WithClass classes={classes.Main}>{burger}</WithClass>
     </>
@@ -96,7 +91,7 @@ const mapDispatchToProps = dispatch => {
     onInitIngredients: () => dispatch(actionCreators.init()),
     onIngredientAdded: ingredient => dispatch(actionCreators.add(ingredient)),
     onIngredientRemoved: ingredient => dispatch(actionCreators.remove(ingredient)),
-    onPopUp: () => dispatch(actionCreators.popUpTimeout()),
+    onPopUpTimeout: () => dispatch(actionCreators.popUpTimeout()),
     onSetRedirect: path => dispatch(actionCreators.setRedirect(path))
   }
 }

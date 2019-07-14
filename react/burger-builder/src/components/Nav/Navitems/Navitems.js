@@ -1,16 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import classes from './scss/Navitems.module.css'
-import NavLink from './Navlink/Navlink'
+import classes from './scss/NavItems.module.css'
+import NavLink from './NavLink/NavLink'
 import * as actionCreator from '../../../store/actions/actionCreators'
 
-const navItems = props => (
+export const NavItems = props =>
   <ul className={classes.NavItems}>
       <NavLink link='/' onClick={props.clicked}>Burger Builder</NavLink>
       {props.token ? <NavLink link='/orders' onClick={props.clicked}>Orders</NavLink> : null}
       {props.token ? <NavLink link='/' onClick={props.onLogOut}>Log Out</NavLink> : <NavLink link='/auth' onClick={props.clicked}>Log In</NavLink>}
   </ul>
-)
 
 const mapStateToProps = state => {
   return {
@@ -24,4 +23,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(navItems)
+export default connect(mapStateToProps, mapDispatchToProps)(NavItems)

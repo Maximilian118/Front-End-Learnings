@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import classes from './scss/Layout.module.css'
 import Toolbar from '../../components/Nav/Toolbar/Toolbar'
-import SideDrawer from '../../components/Nav/Sidedrawer/Sidedrawer'
+import SideDrawer from '../../components/Nav/SideDrawer/SideDrawer'
 import WithClass from '../../hoc/WithClass'
 
 class Layout extends Component {

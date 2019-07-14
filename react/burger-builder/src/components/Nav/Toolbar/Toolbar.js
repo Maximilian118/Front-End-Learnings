@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import classes from './scss/Toolbar.module.css'
 import WithClass from '../../../hoc/WithClass'
 import Logo from '../../../components/Logo/Logo'
-import NavItems from '../Navitems/Navitems'
-import MenuLink from '../Navitems/Menulink/Menulink'
-import NavLink from '../Navitems/Navlink/Navlink'
+import NavItems from '../NavItems/NavItems'
+import MenuLink from '../NavItems/MenuLink/MenuLink'
+import NavLink from '../NavItems/NavLink/NavLink'
 
 const Toolbar = props => (
   <header className={classes.Toolbar}>

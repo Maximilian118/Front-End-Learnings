@@ -1,5 +1,5 @@
 import React from 'react'
-import classes from './scss/Menulink.module.css'
+import classes from './scss/MenuLink.module.css'
 
 const MenuLink = props => 
   <li className={classes.MenuLink}>

@@ -1,5 +1,5 @@
 import * as actionType from '../actions/actionTypes'
-import { updateState, authForm } from '../utility'
+import { updateState, authForm } from '../../shared/utility'
 
 const initialState = {
   token: null,
@@ -49,7 +49,6 @@ const initialState = {
 }
 
 const logInSuccess = (userId, token, email) => {
-  console.log(userId)
   return {
     userId: userId,
     token: token,

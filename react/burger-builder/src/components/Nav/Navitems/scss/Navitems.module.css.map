@@ -2,8 +2,8 @@
     "version": 3,
     "mappings": "AAAA,AAAA,SAAS,CAAC;EACR,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,IAAI;EAChB,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,MAAM;EACjB,WAAW,EAAE,MAAM;EACnB,MAAM,EAAE,IAAI;CACb;;AAED,MAAM,EAAE,SAAS,EAAE,KAAK;EACtB,AAAA,SAAS,CAAC;IACR,SAAS,EAAE,GAAG;GACf",
     "sources": [
-        "Navitems.module.scss"
+        "NavItems.module.scss"
     ],
     "names": [],
-    "file": "Navitems.module.css"
+    "file": "NavItems.module.css"
 }

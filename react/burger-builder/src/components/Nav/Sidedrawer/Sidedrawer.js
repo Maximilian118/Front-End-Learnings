@@ -1,11 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import classes from './scss/Sidedrawer.module.css'
+import classes from './scss/SideDrawer.module.css'
 import WithClass from '../../../hoc/WithClass'
 import Logo from '../../Logo/Logo'
-import NavItems from '../Navitems/Navitems'
+import NavItems from '../NavItems/NavItems'
 import Backdrop from '../../UI/Backdrop/Backdrop'
-import NavLink from '../Navitems/Navlink/Navlink'
+import NavLink from '../NavItems/NavLink/NavLink'
 
 const sideDrawer = props => {
   let openClose = [classes.SideDrawer, classes.Close]

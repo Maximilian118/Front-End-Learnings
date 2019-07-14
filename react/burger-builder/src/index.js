@@ -20,7 +20,7 @@ const rootReducer = combineReducers({
 })
 
 // Middleware
-const logger = store => {
+let logger = store => {
   return next => {
     return action => {
       console.log('[Middleware] Dispatching...', action)
@@ -31,9 +31,10 @@ const logger = store => {
   }
 }
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-
-const store = createStore(rootReducer, composeEnhancers(applyMiddleware(logger, thunk)))
+const dev = process.env.NODE_ENV === 'development'
+const composeEnhancers = dev ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose
+const store = dev ? createStore(rootReducer, composeEnhancers(applyMiddleware(logger, thunk)))
+: createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 
 axios.defaults.baseURL = 'https://burger-builder-703cc.firebaseio.com/'
 

@@ -56,11 +56,9 @@ export const postForm = (order, token) => {
       dispatch(loadingTrue())
       axios.post(`/orders.json?auth=${token}`, order)
         .then(res => {
-          console.log('[ActionCreators] PostForm Success...', res)
           dispatch(postSuccess(res.data.name, order))
         })
         .catch(err => {
-          console.log('[ActionCreators] PostForm Fail...', err)
           dispatch(requestFail(err))
         })
     } else {
@@ -89,11 +87,9 @@ export const getOrders = (token, userId) => {
             id: key
           })
         }
-        console.log('[ActionCreators] GetOrders Success...', res)
         dispatch(ordersSuccess(fetched))
       })
       .catch(err => {
-        console.log('[ActionCreators] GetOrders Fail...', err)
         dispatch(requestFail(err))
       })
   }
@@ -115,7 +111,6 @@ const logInStart = () => {
 }
 
 const logInSuccess = data => {
-  console.log(data)
   return {
     type: actionTypes.LOG_IN_SUCCESS,
     data: data,
@@ -144,7 +139,6 @@ export const logOut = () => {
 export const checkTimeout = expirationTime => {
   return dispatch => {
     setTimeout(() => {
-      console.log('[ActionCreators] Timed Out...')
       dispatch(logOut())
     }, expirationTime * 1000)
   }
@@ -164,7 +158,6 @@ export const authHandler = (email, pass, isLogIn) => {
     }
     axios.post(url, authData)
       .then(res => {
-        console.log('[ActionCreators] LogIn Success...', res)
         localStorage.setItem('token', res.data.idToken)
         localStorage.setItem('expirationTime', new Date(new Date().getTime() + res.data.expiresIn * 1000))
         localStorage.setItem('userId', res.data.localId)
@@ -173,7 +166,6 @@ export const authHandler = (email, pass, isLogIn) => {
         dispatch(checkTimeout(res.data.expiresIn))
       })
       .catch(err => {
-        console.log('[ActionCreators] LogIn Fail...', err)
         dispatch(logInFail(err))
       })
   }
