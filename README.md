@@ -5,7 +5,8 @@ Need to learn / Goals:
 - [X] React.
 - [X] SCSS.
 - [X] Bootstrap.
-- [X] A comprehensive understanding of JS.
+- [X] JS.
+- [X] TS.
 
 React Learning Points:
 
@@ -60,3 +61,7 @@ Vanilla JS Learning Points:
 - [X] Manipulating the DOM.
 - [X] Event oriented programming.
 - [X] Higher order functions.
+
+TS Learning Points:
+
+- [ ] Understanding Types.

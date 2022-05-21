@@ -24,5 +24,7 @@
   "dependencies": {
     "p5": "^0.7.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  }
 }
