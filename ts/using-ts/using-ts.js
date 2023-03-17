@@ -5,7 +5,7 @@ function add(num1, num2) {
     return num1 + num2;
 }
 button.addEventListener("click", function () {
-    console.log(add(+input1.value, +input2.value));
+    console.log(add(+input1.value, input2.value));
 });
 // Value === typeof 'string' so by adding the two we concatenate the strings and get "105".
 // While there are no technical errors with this code we're actually looking for two numbers
