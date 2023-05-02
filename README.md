@@ -64,4 +64,6 @@ Vanilla JS Learning Points:
 
 TS Learning Points:
 
-- [ ] Understanding Types.
+- [X] Understanding Types.
+- [X] Understanding the compiler.
+
