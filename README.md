@@ -2,70 +2,70 @@ A collection of files used to facilitate my learning of Front-End languages and 
 
 Need to learn / Goals:
 
-- [X] SCSS.
-- [X] JS.
-- [X] TS.
-- [X] Bootstrap.
-- [X] React.
+- [x] SCSS.
+- [x] JS.
+- [x] TS.
+- [x] Bootstrap.
+- [x] React.
 
 SCSS Learning Points:
 
-- [X] Nesting.
-- [X] Variables.
-- [X] Operators.
-- [X] Mixins.
-- [X] Flex and Grid.
+- [x] Nesting.
+- [x] Variables.
+- [x] Operators.
+- [x] Mixins.
+- [x] Flex and Grid.
 
 Vanilla JS Learning Points:
 
-- [X] Primitive and Reference data types.
-- [X] Complete ES5, ES6 and ES7 syntactic understanding.
-- [X] Understand and use forEach, for of, for in and map loops.
-- [X] Using Prototypes.
-- [X] The difference between object oriented and functional programming.
-- [X] Destructing.
-- [X] Exporting and importing/requiring files.
-- [X] Classes and Class inheritance.
-- [X] Manipulating the DOM.
-- [X] Event oriented programming.
-- [X] Higher order functions.
+- [x] Primitive and Reference data types.
+- [x] Complete ES5, ES6 and ES7 syntactic understanding.
+- [x] Understand and use forEach, for of, for in and map loops.
+- [x] Using Prototypes.
+- [x] The difference between object oriented and functional programming.
+- [x] Destructing.
+- [x] Exporting and importing/requiring files.
+- [x] Classes and Class inheritance.
+- [x] Manipulating the DOM.
+- [x] Event oriented programming.
+- [x] Higher order functions.
 
 TS Learning Points:
 
-- [X] Understanding Types.
-- [X] Understanding the compiler.
-- [X] Understanding the compiler configuration.
-- [X] Workflow optimisation.
-- [X] Project folder best practices.
+- [x] Understanding Types.
+- [x] Understanding the compiler.
+- [x] Understanding the compiler configuration.
+- [x] Workflow optimisation.
+- [x] Project folder best practices.
 
 Bootstrap Learning Points:
 
-- [X] CDN vs NPM install.
-- [X] Syntactic knowledge base.
-- [X] Methods.
-- [X] Events.
+- [x] CDN vs NPM install.
+- [x] Syntactic knowledge base.
+- [x] Methods.
+- [x] Events.
 
 React Learning Points:
 
-- [X] Create-React-App.
-- [X] Common packages used with React. IE. Babel, WebPack.
-- [X] A comprehensive understanding of JSX.
-- [X] Statefull and Stateless, Functional and Class based Components.
-- [X] Working with inline styles and Radium.
-- [X] Conditional rendering.
-- [X] Outputting lists / DNR.
-- [X] CSS Modules and Dynamic styles.
-- [X] Syntactic and Logic errors.
-- [X] Using Dev Tools with React.
-- [X] Implementing and using errorBoundaries.
-- [X] File Structure & Naming trends.
-- [X] Aux and Fragment containers.
-- [X] Higher order components.
-- [X] Packages such as PropTypes, Axios.
-- [X] Using a Context API.
-- [X] HTTP requests with lifecycle functions.
-- [X] Single page & Multi page applications. 
-- [X] Code splitting / Lazy loading.
-- [X] Dynamic Forms.
-- [X] React-Router & React-Router-Dom.
-- [X] Redux, React-Redux & Redux-Thunk.
+- [x] Create-React-App.
+- [x] Common packages used with React. IE. Babel, WebPack.
+- [x] A comprehensive understanding of JSX.
+- [x] Statefull and Stateless, Functional and Class based Components.
+- [x] Working with inline styles and Radium.
+- [x] Conditional rendering.
+- [x] Outputting lists / DNR.
+- [x] CSS Modules and Dynamic styles.
+- [x] Syntactic and Logic errors.
+- [x] Using Dev Tools with React.
+- [x] Implementing and using errorBoundaries.
+- [x] File Structure & Naming trends.
+- [x] Aux and Fragment containers.
+- [x] Higher order components.
+- [x] Packages such as PropTypes, Axios.
+- [x] Using a Context API.
+- [x] HTTP requests with lifecycle functions.
+- [x] Single page & Multi page applications.
+- [x] Code splitting / Lazy loading.
+- [x] Dynamic Forms.
+- [x] React-Router & React-Router-Dom.
+- [x] Redux, React-Redux & Redux-Thunk.
