@@ -37,6 +37,8 @@ TS Learning Points:
 - [x] Understanding the compiler configuration.
 - [x] Workflow optimisation.
 - [x] Project folder best practices.
+- [x] An in depth understanding of Classes in TS.
+- [x] Understanding interfaces.
 
 Bootstrap Learning Points:
 
