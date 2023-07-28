@@ -15,9 +15,11 @@ class Employee {
         this.role = role;
     }
     greet() {
-        console.log(`welcome ${this.name}`);
+        const msg = `welcome ${this.name}`;
+        console.log(msg);
+        return msg;
     }
 }
 const emp1 = new Employee("Pat", "Postman");
-console.log(emp1);
+console.log(Object.assign(Object.assign({}, emp1), { msg: emp1.greet() }));
 //# sourceMappingURL=app.js.map

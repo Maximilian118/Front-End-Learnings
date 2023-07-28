@@ -32,11 +32,12 @@ user.method("moo")
 interface Named {
   readonly name: string
   outPutName?: string // ? Indicates that this is an optional property.
+  pets?: number
+  dontNeed?(): boolean // optional methods are also possible.
 }
 
 interface Greetable extends Named {
   readonly role: string
-
   greet(param: any): void
 }
 
@@ -49,10 +50,14 @@ class Employee implements Greetable {
     this.role = role
   }
 
-  greet(): void {
-    console.log(`welcome ${this.name}`)
+  greet(): string {
+    const msg = `welcome ${this.name}`
+    console.log(msg)
+    return msg
   }
 }
 
 const emp1 = new Employee("Pat", "Postman")
-console.log(emp1)
+console.log({ ...emp1, msg: emp1.greet() })
+
+// console.log(new Employee("lola", "Kindle"))
