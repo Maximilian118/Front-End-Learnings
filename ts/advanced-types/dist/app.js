@@ -21,4 +21,19 @@ const employeeInfo = (emp) => {
     }
 };
 employeeInfo(emp1);
+const moveAnimal = (a) => {
+    let speed;
+    switch (a.type) {
+        case "bird":
+            speed = a.flyingSpeed;
+            break;
+        case "horse":
+            speed = a.groundSpeed;
+            break;
+        default:
+            speed = 0;
+    }
+    console.log(`The speed is: ${speed}`);
+};
+moveAnimal({ type: "bird", flyingSpeed: 138 });
 //# sourceMappingURL=app.js.map

@@ -49,3 +49,38 @@ employeeInfo(emp1)
 
 // instanceof can be used instead of in for classes!
 // for example: vehicle instanceof Truck
+
+// Discriminated Unions.
+// In this example, when referencing the Animal type, we don't know if flyingSpeed or groundSpeed will be available.
+// We could use an in statement. However, this would only be suitable for checking between two objects.
+// Instead we can add a property to each object which value is a string literal type.
+// This would allow us to check for many cases in our function.
+interface Bird {
+  type: "bird"
+  flyingSpeed: number
+}
+
+interface Horse {
+  type: "horse"
+  groundSpeed: number
+}
+
+type Animal = Bird | Horse
+
+const moveAnimal = (a: Animal) => {
+  let speed: number
+  switch (a.type) {
+    case "bird":
+      speed = a.flyingSpeed
+      break
+    case "horse":
+      speed = a.groundSpeed
+      break
+    default:
+      speed = 0
+  }
+
+  console.log(`The speed is: ${speed}`)
+}
+
+moveAnimal({ type: "bird", flyingSpeed: 138 })
