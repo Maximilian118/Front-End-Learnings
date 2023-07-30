@@ -36,4 +36,11 @@ const moveAnimal = (a) => {
     console.log(`The speed is: ${speed}`);
 };
 moveAnimal({ type: "bird", flyingSpeed: 138 });
+const userInputElement = (document.getElementById("user-input"));
+console.log(userInputElement.value);
+const userInputElementAs = document.getElementById("user-input");
+if (userInputElementAs) {
+    ;
+    userInputElementAs.value = "Hello World!";
+}
 //# sourceMappingURL=app.js.map

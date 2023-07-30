@@ -43,7 +43,7 @@ TS Learning Points:
 - [x] Intersection Types.
 - [x] Type Guards.
 - [x] Discriminated Unions.
-- [ ] Type Casting.
+- [x] Type Casting.
 - [ ] Index Properties.
 - [ ] Function Overloads.
 - [ ] Optional Chaining.

@@ -84,3 +84,22 @@ const moveAnimal = (a: Animal) => {
 }
 
 moveAnimal({ type: "bird", flyingSpeed: 138 })
+
+// Type Casting.
+// Type Casting is used in the circumstance that TS will never be able to automatically detect what specific
+// type we'd like to assign to something. For example, when targeting this input element in the DOM via an
+// id reference, TS is not able to detect that this is specifically an input element. Therefore, TS throws
+// an error when we try and target the value property.
+const userInputElement = <HTMLInputElement>(
+  document.getElementById("user-input")!
+)
+console.log(userInputElement.value)
+
+// The above syntax will work. However, for a React workflow we run into a problem.
+// The same angled brackets are used in JSX and therefore we have a syntax clash.
+// Instead, we can use the as keyword. The syntax is as follows:
+const userInputElementAs = document.getElementById("user-input")
+
+if (userInputElementAs) {
+  ;(userInputElementAs as HTMLInputElement).value = "Hello World!"
+}
