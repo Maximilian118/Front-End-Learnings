@@ -39,6 +39,15 @@ TS Learning Points:
 - [x] Project folder best practices.
 - [x] An in depth understanding of Classes in TS.
 - [x] Understanding interfaces.
+- [x] Advanced Types.
+- [x] Intersection Types.
+- [x] Type Guards.
+- [x] Discriminated Unions.
+- [ ] Type Casting.
+- [ ] Index Properties.
+- [ ] Function Overloads.
+- [ ] Optional Chaining.
+- [ ] Nullish Coalescing.
 
 Bootstrap Learning Points:
 
