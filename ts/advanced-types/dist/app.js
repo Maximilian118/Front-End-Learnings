@@ -43,4 +43,9 @@ if (userInputElementAs) {
     ;
     userInputElementAs.value = "Hello World!";
 }
+const elementError = {
+    id: "b2h5blh345",
+    anything: "aString",
+    anotherThing: "blablabla",
+};
 //# sourceMappingURL=app.js.map

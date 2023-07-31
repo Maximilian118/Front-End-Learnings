@@ -103,3 +103,19 @@ const userInputElementAs = document.getElementById("user-input")
 if (userInputElementAs) {
   ;(userInputElementAs as HTMLInputElement).value = "Hello World!"
 }
+
+// Index Properties.
+// With index properties we can define a criteria rather than something specific.
+// For example, here we're saying that when we build an object based on the Errors interface, an id is
+// equired and the value must be a string. Also, any number of custom props can be added as long as
+// the key is a string and the value is also a string.
+interface Errors {
+  id: string
+  [prop: string]: string
+}
+
+const elementError: Errors = {
+  id: "b2h5blh345",
+  anything: "aString",
+  anotherThing: "blablabla",
+}
