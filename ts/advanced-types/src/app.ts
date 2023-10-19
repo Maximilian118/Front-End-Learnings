@@ -173,3 +173,13 @@ const fetchedUserData = {
 }
 
 console.log(fetchedUserData?.job?.title)
+
+// Nullish Coalescing
+// Loosely related to Optional Chaining, this helps is deal with nullish data.
+// If we know we're going to receive some data but we don't know what the value will be and we only want to
+// have an outcome for null or undefined values rather than an empty string for example, we could use the
+// Nullish Coalescing Operator which is ??.
+
+const userInput = ""
+const storedData = userInput ?? "DEFAULT"
+console.log(storedData)
