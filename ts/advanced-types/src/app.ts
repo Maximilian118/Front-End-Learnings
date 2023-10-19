@@ -119,3 +119,57 @@ const elementError: Errors = {
   anything: "aString",
   anotherThing: "blablabla",
 }
+
+// Function Overloads.
+// One particular problem that can occur when working with functions in TS is regarding functions with
+// multiple possible return types. Consider the fucntion strOrNum below. TS doesn't know if the return
+// type will be a string or a number. Therefore, neither string nor number inbuilt JS functions can be
+// called on the result. To remedy this we need to tell TS what the returned type will be.
+//
+// Now we could simply use Type Casting on the funcion call which would enable us to call split on res
+// as TS would then know the retuned value must be a string but this could end up being a lot of extra
+// code. Instead we can use Function Overloads.
+
+type strAndNum = string | number | boolean
+
+type IOverload = {
+  (a: number, b: number): number
+}
+
+function IOverload(a: number, b: number): number
+function IOverload(a: string, b: string): string
+function IOverload(a: boolean, b: boolean): boolean
+function IOverload(a: strAndNum, b: strAndNum) {
+  if (typeof a === "string" || typeof b === "string") {
+    return a.toString() + b.toString()
+  }
+  if (typeof a === "boolean" || typeof b === "boolean") {
+    if (a === b) {
+      return true
+    } else {
+      return false
+    }
+  }
+  return a + b
+}
+
+const res = IOverload("Max", " Anna")
+const resBool = IOverload(false, true)
+console.log(res, resBool)
+
+// Optional Chaining
+// This is a solution for the circomstances whereby we don't know if certain keys are present in an object.
+// The solution and syntax in TS is to use an Optional Chaining Operator while using dot notation.
+// In the below example we will actually get an error with TS if we comment out the job object as TS knows
+// that job is unavailble. However, if we were referencing an object TS is unaware of, we'd see no errors.
+
+const fetchedUserData = {
+  id: "u1",
+  name: "Max",
+  // job: {
+  //   title: "CEO",
+  //   desc: "My own company",
+  // },
+}
+
+console.log(fetchedUserData?.job?.title)

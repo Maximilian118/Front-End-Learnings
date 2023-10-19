@@ -1,4 +1,5 @@
 "use strict";
+var _a;
 const emp1 = {
     name: "Max",
     permissions: ["edit"],
@@ -48,4 +49,26 @@ const elementError = {
     anything: "aString",
     anotherThing: "blablabla",
 };
+function IOverload(a, b) {
+    if (typeof a === "string" || typeof b === "string") {
+        return a.toString() + b.toString();
+    }
+    if (typeof a === "boolean" || typeof b === "boolean") {
+        if (a === b) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    return a + b;
+}
+const res = IOverload("Max", " Anna");
+const resBool = IOverload(false, true);
+console.log(res, resBool);
+const fetchedUserData = {
+    id: "u1",
+    name: "Max",
+};
+console.log((_a = fetchedUserData === null || fetchedUserData === void 0 ? void 0 : fetchedUserData.job) === null || _a === void 0 ? void 0 : _a.title);
 //# sourceMappingURL=app.js.map
