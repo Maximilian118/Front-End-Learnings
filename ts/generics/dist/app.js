@@ -12,4 +12,7 @@ const merge2 = (objA, objB) => {
 };
 const mergedObj2 = merge2({ name: "Max" }, { age: 29 });
 console.log(mergedObj2.age);
+const merge3 = (objA, objB) => {
+    return Object.assign(objA, objB);
+};
 //# sourceMappingURL=app.js.map

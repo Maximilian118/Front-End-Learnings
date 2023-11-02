@@ -64,3 +64,19 @@ const merge2 = <T extends object, U>(objA: T, objB: U) => {
 // that we can now access the age value with dot notation.
 const mergedObj2 = merge2({ name: "Max" }, { age: 29 })
 console.log(mergedObj2.age)
+
+// Working with constraints.
+//
+// At the moment, what if we pass in the number 30 instead of an object when we call
+// this function? Actually, TS wouldn't complain at all as we haven't specified
+// anything about these types.
+//
+// To combat this we need to be a little more specific when defining these types.
+// We can achive this by telling TS that we expect T and U to be object using the
+// syntax below:
+const merge3 = <T extends object, U extends object>(objA: T, objB: U) => {
+  return Object.assign(objA, objB)
+}
+
+// As a result if we try and pass anything other than an object to merge3 TS will
+// throw an error as that would no longer match the type assignment.
