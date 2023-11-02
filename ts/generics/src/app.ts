@@ -27,8 +27,40 @@ names[0].split("")
 // string. In this case what we can do is add Promise<string> tell TS that actually
 // we know that a string will be returned.
 
-const promise: Promise<string> = new Promise((res, err) => {
-  setTimeout(() => {
-    res("This is done")
-  }, 2000)
-})
+// const promise: Promise<string> = new Promise((res, err) => {
+//   setTimeout(() => {
+//     res("This is done")
+//   }, 2000)
+// })
+
+// Creating generic functions
+const merge = (objA: object, objB: object) => {
+  return Object.assign(objA, objB)
+}
+
+// Consider the function above.
+// At the moment TS will return an object with no knowledge of what the object consists
+// of. We need to give TS more information as to what we expect this object to contain.
+//
+// For example if we try and reference name or age in mergeObj below TS will throw an
+// error.
+const mergedObj = merge({ name: "Max" }, { age: 29 })
+
+// Here in merge2 we're defining types using the angled brackets.
+// We're utilising type inferance here with T and U.
+//
+// We're still quite vague in our type assignments here. This is actually deliberate
+// as we want to sustain a level of flexability for example if we wanted to add another
+// key value pair to either of these objects.
+//
+// All we're saying here is that we expect to return different types of data for these
+// two arguments and overall we'll return the intersection of this data.
+const merge2 = <T extends object, U>(objA: T, objB: U) => {
+  return Object.assign(objA, objB)
+}
+
+// By telling TS that we know these two data sets will be different we unlock much more
+// functionality that TS can offer when we call this function. A very basic example is
+// that we can now access the age value with dot notation.
+const mergedObj2 = merge2({ name: "Max" }, { age: 29 })
+console.log(mergedObj2.age)
