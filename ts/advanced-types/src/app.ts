@@ -247,3 +247,11 @@ const createExample2 = (
   obj.date = date
   return obj as Example
 }
+
+// readonly utility type
+
+// This one is quite self explanatory. When the readonly utility type is assigned to a type we're
+// asking TS to display an error of we try and mutate that type at some point.
+
+const numbers: Readonly<number[]> = [3, 4, 6, 7, 8]
+// numbers.push(2)

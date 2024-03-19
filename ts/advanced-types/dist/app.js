@@ -86,4 +86,5 @@ const createExample2 = (name, age, date) => {
     obj.date = date;
     return obj;
 };
+const numbers = [3, 4, 6, 7, 8];
 //# sourceMappingURL=app.js.map
