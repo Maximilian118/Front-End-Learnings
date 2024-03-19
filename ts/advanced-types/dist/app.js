@@ -79,4 +79,11 @@ const testObj = {
 const somefunc = (obj, key) => {
     return obj[key];
 };
+const createExample2 = (name, age, date) => {
+    let obj = {};
+    obj.name = name;
+    obj.age = age;
+    obj.date = date;
+    return obj;
+};
 //# sourceMappingURL=app.js.map

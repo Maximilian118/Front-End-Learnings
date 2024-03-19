@@ -202,3 +202,48 @@ const testObj: TestObj = {
 const somefunc = <T extends object, U extends keyof T>(obj: T, key: U) => {
   return obj[key]
 }
+
+// partial utility type
+
+interface Example {
+  name: string
+  age: number
+  date: number | string
+}
+
+// With this below function we're creating a variable of the Example type, adding all of the required
+// key value pairs to that object and returning it therefore fulfilling the type requirement of Example.
+//
+// However, TS doesn't agree with adding to an empty object in such a way. If we remove the type
+// assignment of Example on the obj object we see an error for every single key added to the empty object
+// using dot notation. On the other hand if we assign type Example to obj that still isn't acceptable as
+// the Example type requires more than an empty object.
+
+// const createExample = (
+//   name: string,
+//   age: number,
+//   date: number | string
+// ): Example => {
+//   let obj: Example = {}
+//   obj.name = name
+//   obj.age = age
+//   obj.date = date
+//   return obj
+// }
+
+// This is one situation that the Partial utility type could be of use. Consider the below code.
+// The Partial utility type converts all of the keys in the Example type into optional keys.
+// Therefore, TS will now agree with this workflow as we no longer need to initialise obj
+// with all of the key value pairs that Example requires.
+
+const createExample2 = (
+  name: string,
+  age: number,
+  date: number | string,
+): Example => {
+  let obj: Partial<Example> = {}
+  obj.name = name
+  obj.age = age
+  obj.date = date
+  return obj as Example
+}
