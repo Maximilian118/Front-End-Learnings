@@ -1,5 +1,4 @@
 "use strict";
-var _a;
 const emp1 = {
     name: "Max",
     permissions: ["edit"],
@@ -70,8 +69,14 @@ const fetchedUserData = {
     id: "u1",
     name: "Max",
 };
-console.log((_a = fetchedUserData === null || fetchedUserData === void 0 ? void 0 : fetchedUserData.job) === null || _a === void 0 ? void 0 : _a.title);
 const userInput = "";
 const storedData = userInput !== null && userInput !== void 0 ? userInput : "DEFAULT";
 console.log(storedData);
+const testObj = {
+    name: "some name",
+    dob: "15/03/1994",
+};
+const somefunc = (obj, key) => {
+    return obj[key];
+};
 //# sourceMappingURL=app.js.map

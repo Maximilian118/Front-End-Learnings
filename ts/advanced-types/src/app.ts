@@ -172,7 +172,7 @@ const fetchedUserData = {
   // },
 }
 
-console.log(fetchedUserData?.job?.title)
+// console.log(fetchedUserData?.job?.title)
 
 // Nullish Coalescing
 // Loosely related to Optional Chaining, this helps is deal with nullish data.
@@ -183,3 +183,22 @@ console.log(fetchedUserData?.job?.title)
 const userInput = ""
 const storedData = userInput ?? "DEFAULT"
 console.log(storedData)
+
+// keyof
+// The keyof contraint helps us with particular situations such as the one below.
+// What we're saying here in someFunc is that we'd like type U to be a key of the T type.
+// Therefore, when calling someFunc we'd actually see an error if the passed key doesn't exist in
+// the passed object. This is just another step towards making our code more clear to others.
+
+interface TestObj {
+  [key: string]: string
+}
+
+const testObj: TestObj = {
+  name: "some name",
+  dob: "15/03/1994",
+}
+
+const somefunc = <T extends object, U extends keyof T>(obj: T, key: U) => {
+  return obj[key]
+}

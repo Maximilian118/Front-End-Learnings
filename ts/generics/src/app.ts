@@ -80,3 +80,5 @@ const merge3 = <T extends object, U extends object>(objA: T, objB: U) => {
 
 // As a result if we try and pass anything other than an object to merge3 TS will
 // throw an error as that would no longer match the type assignment.
+
+// The keyof constraint
