@@ -26,13 +26,37 @@ class ProjectInput {
         this.attach();
         this.titleInputElement = this.element.querySelector("#title");
         this.descriptionInputElement = this.element.querySelector("#description");
-        this.peopleInputElement = this.element.querySelector("#peoplee");
+        this.peopleInputElement = this.element.querySelector("#people");
         this.configure();
         this.attach();
     }
+    gatherInput() {
+        const titleVal = this.titleInputElement.value;
+        const descVal = this.descriptionInputElement.value;
+        const peopleVal = this.peopleInputElement.value;
+        if (titleVal.trim().length === 0 ||
+            descVal.trim().length === 0 ||
+            peopleVal.trim().length === 0) {
+            alert("Invalid");
+            return;
+        }
+        else {
+            return [titleVal, descVal, +peopleVal];
+        }
+    }
+    clearInputs() {
+        this.titleInputElement.value = "";
+        this.descriptionInputElement.value = "";
+        this.peopleInputElement.value = "";
+    }
     submitHandler(event) {
         event.preventDefault();
-        console.log(this.titleInputElement.value);
+        const userInput = this.gatherInput();
+        if (Array.isArray(userInput)) {
+            const [title, desc, people] = userInput;
+            console.log(title, desc, people);
+            this.clearInputs();
+        }
     }
     configure() {
         this.element.addEventListener("submit", this.submitHandler);

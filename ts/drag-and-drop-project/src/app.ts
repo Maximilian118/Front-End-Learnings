@@ -39,17 +39,46 @@ class ProjectInput {
       "#description",
     ) as HTMLInputElement
     this.peopleInputElement = this.element.querySelector(
-      "#peoplee",
+      "#people",
     ) as HTMLInputElement
 
     this.configure()
     this.attach()
   }
 
+  private gatherInput(): [string, string, number] | void {
+    const titleVal = this.titleInputElement.value
+    const descVal = this.descriptionInputElement.value
+    const peopleVal = this.peopleInputElement.value
+
+    if (
+      titleVal.trim().length === 0 ||
+      descVal.trim().length === 0 ||
+      peopleVal.trim().length === 0
+    ) {
+      alert("Invalid")
+      return
+    } else {
+      return [titleVal, descVal, +peopleVal]
+    }
+  }
+
+  private clearInputs() {
+    this.titleInputElement.value = ""
+    this.descriptionInputElement.value = ""
+    this.peopleInputElement.value = ""
+  }
+
   @autobind
   private submitHandler(event: Event) {
     event.preventDefault()
-    console.log(this.titleInputElement.value)
+    const userInput = this.gatherInput()
+
+    if (Array.isArray(userInput)) {
+      const [title, desc, people] = userInput
+      console.log(title, desc, people)
+      this.clearInputs()
+    }
   }
 
   private configure() {
