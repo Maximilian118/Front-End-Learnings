@@ -16,7 +16,7 @@ const autobind = (_, _2, descriptor) => {
     };
     return adjDescriptor;
 };
-function validate(valInt) {
+const validate = (valInt) => {
     let isValid = true;
     if (valInt.required) {
         isValid = isValid && valInt.value.toString().trim().length !== 0;
@@ -34,6 +34,27 @@ function validate(valInt) {
         isValid = isValid && valInt.value <= valInt.max;
     }
     return isValid;
+};
+class ProjectList {
+    constructor(type) {
+        this.type = type;
+        this.templateElement = document.getElementById("project-list");
+        this.hostElement = document.getElementById("app");
+        const importNode = document.importNode(this.templateElement.content, true);
+        this.element = importNode.firstElementChild;
+        this.element.id = `${this.type}-projects`;
+        this.attach();
+        this.renderContent();
+    }
+    renderContent() {
+        const listId = `${this.type}-projects-list`;
+        this.element.querySelector("ul").id = listId;
+        this.element.querySelector("h2").textContent =
+            this.type.toUpperCase() + " Projects";
+    }
+    attach() {
+        this.hostElement.insertAdjacentElement("beforeend", this.element);
+    }
 }
 class ProjectInput {
     constructor() {
@@ -42,7 +63,6 @@ class ProjectInput {
         const importNode = document.importNode(this.templateElement.content, true);
         this.element = importNode.firstElementChild;
         this.element.id = "user-input";
-        this.attach();
         this.titleInputElement = this.element.querySelector("#title");
         this.descriptionInputElement = this.element.querySelector("#description");
         this.peopleInputElement = this.element.querySelector("#people");
@@ -103,4 +123,6 @@ __decorate([
     autobind
 ], ProjectInput.prototype, "submitHandler", null);
 const prjInput = new ProjectInput();
+const activePrjList = new ProjectList("active");
+const donePrjList = new ProjectList("done");
 //# sourceMappingURL=app.js.map

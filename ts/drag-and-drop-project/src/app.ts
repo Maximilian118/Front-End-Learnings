@@ -23,7 +23,7 @@ interface Validatable {
   max?: number
 }
 
-function validate(valInt: Validatable) {
+const validate = (valInt: Validatable) => {
   let isValid = true
 
   if (valInt.required) {
@@ -49,6 +49,38 @@ function validate(valInt: Validatable) {
   return isValid
 }
 
+// List
+class ProjectList {
+  templateElement: HTMLTemplateElement
+  hostElement: HTMLDivElement
+  element: HTMLElement
+
+  constructor(private type: "active" | "done") {
+    this.templateElement = document.getElementById(
+      "project-list",
+    )! as HTMLTemplateElement
+    this.hostElement = document.getElementById("app")! as HTMLDivElement
+
+    const importNode = document.importNode(this.templateElement.content, true)
+    this.element = importNode.firstElementChild as HTMLElement
+    this.element.id = `${this.type}-projects`
+    this.attach()
+    this.renderContent()
+  }
+
+  private renderContent() {
+    const listId = `${this.type}-projects-list`
+    this.element.querySelector("ul")!.id = listId
+    this.element.querySelector("h2")!.textContent =
+      this.type.toUpperCase() + " Projects"
+  }
+
+  private attach() {
+    this.hostElement.insertAdjacentElement("beforeend", this.element)
+  }
+}
+
+// Form
 class ProjectInput {
   templateElement: HTMLTemplateElement
   hostElement: HTMLDivElement
@@ -66,7 +98,6 @@ class ProjectInput {
     const importNode = document.importNode(this.templateElement.content, true)
     this.element = importNode.firstElementChild as HTMLFormElement
     this.element.id = "user-input"
-    this.attach()
 
     this.titleInputElement = this.element.querySelector(
       "#title",
@@ -143,3 +174,5 @@ class ProjectInput {
 }
 
 const prjInput = new ProjectInput()
+const activePrjList = new ProjectList("active")
+const donePrjList = new ProjectList("done")
