@@ -1,4 +1,4 @@
-// autobind decorator
+// Decorators
 const autobind = (_: any, _2: string, descriptor: PropertyDescriptor) => {
   const orgMethod = descriptor.value
 
@@ -11,6 +11,42 @@ const autobind = (_: any, _2: string, descriptor: PropertyDescriptor) => {
   }
 
   return adjDescriptor
+}
+
+// Validation
+interface Validatable {
+  value: string | number
+  required?: boolean
+  minLength?: number
+  maxLength?: number
+  min?: number
+  max?: number
+}
+
+function validate(valInt: Validatable) {
+  let isValid = true
+
+  if (valInt.required) {
+    isValid = isValid && valInt.value.toString().trim().length !== 0
+  }
+
+  if (valInt.minLength != null && typeof valInt.value === "string") {
+    isValid = isValid && valInt.value.length >= valInt.minLength
+  }
+
+  if (valInt.maxLength != null && typeof valInt.value === "string") {
+    isValid = isValid && valInt.value.length <= valInt.maxLength
+  }
+
+  if (valInt.min != null && typeof valInt.value === "number") {
+    isValid = isValid && valInt.value >= valInt.min
+  }
+
+  if (valInt.max != null && typeof valInt.value === "number") {
+    isValid = isValid && valInt.value <= valInt.max
+  }
+
+  return isValid
 }
 
 class ProjectInput {
@@ -47,19 +83,35 @@ class ProjectInput {
   }
 
   private gatherInput(): [string, string, number] | void {
-    const titleVal = this.titleInputElement.value
-    const descVal = this.descriptionInputElement.value
-    const peopleVal = this.peopleInputElement.value
+    const enteredTitle = this.titleInputElement.value
+    const enteredDescription = this.descriptionInputElement.value
+    const enteredPeople = this.peopleInputElement.value
+
+    const titleValidatable: Validatable = {
+      value: enteredTitle,
+      required: true,
+    }
+    const descriptionValidatable: Validatable = {
+      value: enteredDescription,
+      required: true,
+      minLength: 5,
+    }
+    const peopleValidatable: Validatable = {
+      value: +enteredPeople,
+      required: true,
+      min: 1,
+      max: 5,
+    }
 
     if (
-      titleVal.trim().length === 0 ||
-      descVal.trim().length === 0 ||
-      peopleVal.trim().length === 0
+      !validate(titleValidatable) ||
+      !validate(descriptionValidatable) ||
+      !validate(peopleValidatable)
     ) {
-      alert("Invalid")
+      alert("Invalid input, please try again!")
       return
     } else {
-      return [titleVal, descVal, +peopleVal]
+      return [enteredTitle, enteredDescription, +enteredPeople]
     }
   }
 

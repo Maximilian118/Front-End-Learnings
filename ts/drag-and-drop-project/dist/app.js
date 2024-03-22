@@ -16,6 +16,25 @@ const autobind = (_, _2, descriptor) => {
     };
     return adjDescriptor;
 };
+function validate(valInt) {
+    let isValid = true;
+    if (valInt.required) {
+        isValid = isValid && valInt.value.toString().trim().length !== 0;
+    }
+    if (valInt.minLength != null && typeof valInt.value === "string") {
+        isValid = isValid && valInt.value.length >= valInt.minLength;
+    }
+    if (valInt.maxLength != null && typeof valInt.value === "string") {
+        isValid = isValid && valInt.value.length <= valInt.maxLength;
+    }
+    if (valInt.min != null && typeof valInt.value === "number") {
+        isValid = isValid && valInt.value >= valInt.min;
+    }
+    if (valInt.max != null && typeof valInt.value === "number") {
+        isValid = isValid && valInt.value <= valInt.max;
+    }
+    return isValid;
+}
 class ProjectInput {
     constructor() {
         this.templateElement = document.getElementById("project-input");
@@ -31,17 +50,32 @@ class ProjectInput {
         this.attach();
     }
     gatherInput() {
-        const titleVal = this.titleInputElement.value;
-        const descVal = this.descriptionInputElement.value;
-        const peopleVal = this.peopleInputElement.value;
-        if (titleVal.trim().length === 0 ||
-            descVal.trim().length === 0 ||
-            peopleVal.trim().length === 0) {
-            alert("Invalid");
+        const enteredTitle = this.titleInputElement.value;
+        const enteredDescription = this.descriptionInputElement.value;
+        const enteredPeople = this.peopleInputElement.value;
+        const titleValidatable = {
+            value: enteredTitle,
+            required: true,
+        };
+        const descriptionValidatable = {
+            value: enteredDescription,
+            required: true,
+            minLength: 5,
+        };
+        const peopleValidatable = {
+            value: +enteredPeople,
+            required: true,
+            min: 1,
+            max: 5,
+        };
+        if (!validate(titleValidatable) ||
+            !validate(descriptionValidatable) ||
+            !validate(peopleValidatable)) {
+            alert("Invalid input, please try again!");
             return;
         }
         else {
-            return [titleVal, descVal, +peopleVal];
+            return [enteredTitle, enteredDescription, +enteredPeople];
         }
     }
     clearInputs() {
