@@ -6,9 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>A Practice TS Project</title>
     <link rel="stylesheet" href="app.css" />
-    <script type="module" src="dist/app.js"></script>
+    <script type="module" src="dist/app.js" defer></script>
   </head>
   <body>
+    <script>
+      var GLOBAL = "Global variable"
+    </script>
     <template id="project-input">
       <form>
         <div class="form-control">
