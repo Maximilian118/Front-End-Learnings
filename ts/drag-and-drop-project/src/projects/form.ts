@@ -1,6 +1,6 @@
-import { state } from "../state/state.js"
-import { Validatable, validate } from "../validation/validation.js"
-import { autobind } from "../decorators/decorators.js"
+import { state } from "../state/state"
+import { Validatable, validate } from "../validation/validation"
+import { autobind } from "../decorators/decorators"
 
 // Form
 export class ProjectInput {

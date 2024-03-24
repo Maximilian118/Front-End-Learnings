@@ -1,4 +1,4 @@
-import { state } from "../state/state.js"
+import { state } from "../state/state"
 
 // List
 export class ProjectList {

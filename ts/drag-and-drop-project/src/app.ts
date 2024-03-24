@@ -1,5 +1,5 @@
-import { ProjectList } from "./projects/projects.js"
-import { ProjectInput } from "./projects/form.js"
+import { ProjectList } from "./projects/projects"
+import { ProjectInput } from "./projects/form"
 
 new ProjectInput()
 new ProjectList("active")
