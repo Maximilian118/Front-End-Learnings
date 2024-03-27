@@ -44,10 +44,19 @@ TS Learning Points:
 - [x] Type Guards.
 - [x] Discriminated Unions.
 - [x] Type Casting.
-- [ ] Index Properties.
-- [ ] Function Overloads.
-- [ ] Optional Chaining.
-- [ ] Nullish Coalescing.
+- [x] Index Properties.
+- [x] Function Overloads.
+- [x] Optional Chaining.
+- [x] Nullish Coalescing. ??
+- [x] Generic Types.
+- [x] Decorators.
+- [x] Namespaces.
+- [x] Modules with TS.
+- [x] Webpack with TS.
+- [x] Using 3rd party JS libraries with TS.
+- [x] Using Native TS 3rd party libraries.
+- [ ] Using TS with React.
+- [ ] Using TS with Node.js and Express.
 
 Bootstrap Learning Points:
 
